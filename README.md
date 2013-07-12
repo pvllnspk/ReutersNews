@@ -1,4 +1,0 @@
-ReutersNewsFeedsReader
-======================
-
-ReutersNewsFeedsReader

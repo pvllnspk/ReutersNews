@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B332E6D3179097720069C295 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6BC179097720069C295 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D4179097720069C295 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6BF179097720069C295 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D5179097720069C295 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6C2179097720069C295 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D6179097720069C295 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6C4179097720069C295 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D7179097720069C295 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6C6179097720069C295 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D8179097720069C295 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6C9179097720069C295 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6D9179097720069C295 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6CB179097720069C295 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6DA179097720069C295 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6CE179097720069C295 /* IISideController.m */; };
+		B332E6DB179097720069C295 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6D0179097720069C295 /* IIViewDeckController.m */; };
+		B332E6DC179097720069C295 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6D2179097720069C295 /* IIWrapController.m */; };
+		B332E6EB17909B4B0069C295 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B332E6EA17909B4B0069C295 /* QuartzCore.framework */; };
+		B332E6F117909C300069C295 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B332E6F017909C300069C295 /* libxml2.dylib */; };
+		B332E6F917909CA00069C295 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6F417909CA00069C295 /* TFHpple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6FA17909CA00069C295 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6F617909CA00069C295 /* TFHppleElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B332E6FB17909CA00069C295 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B332E6F817909CA00069C295 /* XPathQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3EC82EC17909552005ECBBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EC82EB17909552005ECBBF /* UIKit.framework */; };
+		B3EC82EE17909552005ECBBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EC82ED17909552005ECBBF /* Foundation.framework */; };
+		B3EC82F017909552005ECBBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EC82EF17909552005ECBBF /* CoreGraphics.framework */; };
+		B3EC82F617909552005ECBBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3EC82F417909552005ECBBF /* InfoPlist.strings */; };
+		B3EC82F817909552005ECBBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC82F717909552005ECBBF /* main.m */; };
+		B3EC82FC17909552005ECBBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC82FB17909552005ECBBF /* AppDelegate.m */; };
+		B3EC82FE17909552005ECBBF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EC82FD17909552005ECBBF /* Default.png */; };
+		B3EC830017909552005ECBBF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EC82FF17909552005ECBBF /* Default@2x.png */; };
+		B3EC830217909552005ECBBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EC830117909552005ECBBF /* Default-568h@2x.png */; };
+		B3EC830517909552005ECBBF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC830417909552005ECBBF /* MasterViewController.m */; };
+		B3EC830817909552005ECBBF /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3EC830717909552005ECBBF /* DetailViewController.m */; };
+		B3EC830B17909552005ECBBF /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EC830917909552005ECBBF /* MasterViewController_iPhone.xib */; };
+		B3EC830E17909552005ECBBF /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EC830C17909552005ECBBF /* MasterViewController_iPad.xib */; };
+		B3EC831117909552005ECBBF /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EC830F17909552005ECBBF /* DetailViewController_iPhone.xib */; };
+		B3EC831417909552005ECBBF /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3EC831217909552005ECBBF /* DetailViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B332E6BB179097720069C295 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		B332E6BC179097720069C295 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		B332E6BE179097720069C295 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B332E6BF179097720069C295 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B332E6C1179097720069C295 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		B332E6C2179097720069C295 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		B332E6C3179097720069C295 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		B332E6C4179097720069C295 /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		B332E6C5179097720069C295 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		B332E6C6179097720069C295 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		B332E6C7179097720069C295 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		B332E6C8179097720069C295 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		B332E6C9179097720069C295 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		B332E6CA179097720069C295 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		B332E6CB179097720069C295 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		B332E6CD179097720069C295 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		B332E6CE179097720069C295 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		B332E6CF179097720069C295 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		B332E6D0179097720069C295 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		B332E6D1179097720069C295 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		B332E6D2179097720069C295 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		B332E6EA17909B4B0069C295 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B332E6F017909C300069C295 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B332E6F317909CA00069C295 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		B332E6F417909CA00069C295 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		B332E6F517909CA00069C295 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		B332E6F617909CA00069C295 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		B332E6F717909CA00069C295 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		B332E6F817909CA00069C295 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		B3EC82E817909552005ECBBF /* ReutersNewsFeedsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReutersNewsFeedsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EC82EB17909552005ECBBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3EC82ED17909552005ECBBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3EC82EF17909552005ECBBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3EC82F317909552005ECBBF /* ReutersNewsFeedsReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReutersNewsFeedsReader-Info.plist"; sourceTree = "<group>"; };
+		B3EC82F517909552005ECBBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3EC82F717909552005ECBBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3EC82F917909552005ECBBF /* ReutersNewsFeedsReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReutersNewsFeedsReader-Prefix.pch"; sourceTree = "<group>"; };
+		B3EC82FA17909552005ECBBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3EC82FB17909552005ECBBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3EC82FD17909552005ECBBF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B3EC82FF17909552005ECBBF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B3EC830117909552005ECBBF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B3EC830317909552005ECBBF /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B3EC830417909552005ECBBF /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B3EC830617909552005ECBBF /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B3EC830717909552005ECBBF /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B3EC830A17909552005ECBBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
+		B3EC830D17909552005ECBBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
+		B3EC831017909552005ECBBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		B3EC831317909552005ECBBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3EC82E517909552005ECBBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B332E6F117909C300069C295 /* libxml2.dylib in Frameworks */,
+				B332E6EB17909B4B0069C295 /* QuartzCore.framework in Frameworks */,
+				B3EC82EC17909552005ECBBF /* UIKit.framework in Frameworks */,
+				B3EC82EE17909552005ECBBF /* Foundation.framework in Frameworks */,
+				B3EC82F017909552005ECBBF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B332E6B9179097720069C295 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6F217909CA00069C295 /* Hpple */,
+				B332E6BA179097720069C295 /* Google Toolbox for Mac */,
+				B332E6BD179097720069C295 /* MBProgressHUD */,
+				B332E6C0179097720069C295 /* MWFeedParser */,
+				B332E6CC179097720069C295 /* ViewDeck */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		B332E6BA179097720069C295 /* Google Toolbox for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6BB179097720069C295 /* GTMNSString+HTML.h */,
+				B332E6BC179097720069C295 /* GTMNSString+HTML.m */,
+			);
+			path = "Google Toolbox for Mac";
+			sourceTree = "<group>";
+		};
+		B332E6BD179097720069C295 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6BE179097720069C295 /* MBProgressHUD.h */,
+				B332E6BF179097720069C295 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		B332E6C0179097720069C295 /* MWFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6C1179097720069C295 /* MWFeedInfo.h */,
+				B332E6C2179097720069C295 /* MWFeedInfo.m */,
+				B332E6C3179097720069C295 /* MWFeedItem.h */,
+				B332E6C4179097720069C295 /* MWFeedItem.m */,
+				B332E6C5179097720069C295 /* MWFeedParser.h */,
+				B332E6C6179097720069C295 /* MWFeedParser.m */,
+				B332E6C7179097720069C295 /* MWFeedParser_Private.h */,
+				B332E6C8179097720069C295 /* NSDate+InternetDateTime.h */,
+				B332E6C9179097720069C295 /* NSDate+InternetDateTime.m */,
+				B332E6CA179097720069C295 /* NSString+HTML.h */,
+				B332E6CB179097720069C295 /* NSString+HTML.m */,
+			);
+			path = MWFeedParser;
+			sourceTree = "<group>";
+		};
+		B332E6CC179097720069C295 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6CD179097720069C295 /* IISideController.h */,
+				B332E6CE179097720069C295 /* IISideController.m */,
+				B332E6CF179097720069C295 /* IIViewDeckController.h */,
+				B332E6D0179097720069C295 /* IIViewDeckController.m */,
+				B332E6D1179097720069C295 /* IIWrapController.h */,
+				B332E6D2179097720069C295 /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		B332E6F217909CA00069C295 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6F317909CA00069C295 /* TFHpple.h */,
+				B332E6F417909CA00069C295 /* TFHpple.m */,
+				B332E6F517909CA00069C295 /* TFHppleElement.h */,
+				B332E6F617909CA00069C295 /* TFHppleElement.m */,
+				B332E6F717909CA00069C295 /* XPathQuery.h */,
+				B332E6F817909CA00069C295 /* XPathQuery.m */,
+			);
+			path = Hpple;
+			sourceTree = "<group>";
+		};
+		B3EC82DF17909552005ECBBF = {
+			isa = PBXGroup;
+			children = (
+				B332E6EA17909B4B0069C295 /* QuartzCore.framework */,
+				B3EC82F117909552005ECBBF /* ReutersNewsFeedsReader */,
+				B3EC82EA17909552005ECBBF /* Frameworks */,
+				B3EC82E917909552005ECBBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3EC82E917909552005ECBBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC82E817909552005ECBBF /* ReutersNewsFeedsReader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3EC82EA17909552005ECBBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B332E6F017909C300069C295 /* libxml2.dylib */,
+				B3EC82EB17909552005ECBBF /* UIKit.framework */,
+				B3EC82ED17909552005ECBBF /* Foundation.framework */,
+				B3EC82EF17909552005ECBBF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3EC82F117909552005ECBBF /* ReutersNewsFeedsReader */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC82FA17909552005ECBBF /* AppDelegate.h */,
+				B3EC82FB17909552005ECBBF /* AppDelegate.m */,
+				B3EC830317909552005ECBBF /* MasterViewController.h */,
+				B3EC830417909552005ECBBF /* MasterViewController.m */,
+				B3EC830617909552005ECBBF /* DetailViewController.h */,
+				B3EC830717909552005ECBBF /* DetailViewController.m */,
+				B3EC830917909552005ECBBF /* MasterViewController_iPhone.xib */,
+				B3EC830C17909552005ECBBF /* MasterViewController_iPad.xib */,
+				B3EC830F17909552005ECBBF /* DetailViewController_iPhone.xib */,
+				B3EC831217909552005ECBBF /* DetailViewController_iPad.xib */,
+				B332E6B9179097720069C295 /* Vendor */,
+				B3EC82F217909552005ECBBF /* Supporting Files */,
+			);
+			path = ReutersNewsFeedsReader;
+			sourceTree = "<group>";
+		};
+		B3EC82F217909552005ECBBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC82F317909552005ECBBF /* ReutersNewsFeedsReader-Info.plist */,
+				B3EC82F417909552005ECBBF /* InfoPlist.strings */,
+				B3EC82F717909552005ECBBF /* main.m */,
+				B3EC82F917909552005ECBBF /* ReutersNewsFeedsReader-Prefix.pch */,
+				B3EC82FD17909552005ECBBF /* Default.png */,
+				B3EC82FF17909552005ECBBF /* Default@2x.png */,
+				B3EC830117909552005ECBBF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3EC82E717909552005ECBBF /* ReutersNewsFeedsReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3EC831717909552005ECBBF /* Build configuration list for PBXNativeTarget "ReutersNewsFeedsReader" */;
+			buildPhases = (
+				B3EC82E417909552005ECBBF /* Sources */,
+				B3EC82E517909552005ECBBF /* Frameworks */,
+				B3EC82E617909552005ECBBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReutersNewsFeedsReader;
+			productName = ReutersNewsFeedsReader;
+			productReference = B3EC82E817909552005ECBBF /* ReutersNewsFeedsReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3EC82E017909552005ECBBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = pvllnspk;
+			};
+			buildConfigurationList = B3EC82E317909552005ECBBF /* Build configuration list for PBXProject "ReutersNewsFeedsReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B3EC82DF17909552005ECBBF;
+			productRefGroup = B3EC82E917909552005ECBBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3EC82E717909552005ECBBF /* ReutersNewsFeedsReader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3EC82E617909552005ECBBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3EC82F617909552005ECBBF /* InfoPlist.strings in Resources */,
+				B3EC82FE17909552005ECBBF /* Default.png in Resources */,
+				B3EC830017909552005ECBBF /* Default@2x.png in Resources */,
+				B3EC830217909552005ECBBF /* Default-568h@2x.png in Resources */,
+				B3EC830B17909552005ECBBF /* MasterViewController_iPhone.xib in Resources */,
+				B3EC830E17909552005ECBBF /* MasterViewController_iPad.xib in Resources */,
+				B3EC831117909552005ECBBF /* DetailViewController_iPhone.xib in Resources */,
+				B3EC831417909552005ECBBF /* DetailViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3EC82E417909552005ECBBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3EC82F817909552005ECBBF /* main.m in Sources */,
+				B3EC82FC17909552005ECBBF /* AppDelegate.m in Sources */,
+				B3EC830517909552005ECBBF /* MasterViewController.m in Sources */,
+				B3EC830817909552005ECBBF /* DetailViewController.m in Sources */,
+				B332E6D3179097720069C295 /* GTMNSString+HTML.m in Sources */,
+				B332E6D4179097720069C295 /* MBProgressHUD.m in Sources */,
+				B332E6D5179097720069C295 /* MWFeedInfo.m in Sources */,
+				B332E6D6179097720069C295 /* MWFeedItem.m in Sources */,
+				B332E6D7179097720069C295 /* MWFeedParser.m in Sources */,
+				B332E6D8179097720069C295 /* NSDate+InternetDateTime.m in Sources */,
+				B332E6D9179097720069C295 /* NSString+HTML.m in Sources */,
+				B332E6DA179097720069C295 /* IISideController.m in Sources */,
+				B332E6DB179097720069C295 /* IIViewDeckController.m in Sources */,
+				B332E6DC179097720069C295 /* IIWrapController.m in Sources */,
+				B332E6F917909CA00069C295 /* TFHpple.m in Sources */,
+				B332E6FA17909CA00069C295 /* TFHppleElement.m in Sources */,
+				B332E6FB17909CA00069C295 /* XPathQuery.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B3EC82F417909552005ECBBF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3EC82F517909552005ECBBF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3EC830917909552005ECBBF /* MasterViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3EC830A17909552005ECBBF /* en */,
+			);
+			name = MasterViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B3EC830C17909552005ECBBF /* MasterViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3EC830D17909552005ECBBF /* en */,
+			);
+			name = MasterViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B3EC830F17909552005ECBBF /* DetailViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3EC831017909552005ECBBF /* en */,
+			);
+			name = DetailViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		B3EC831217909552005ECBBF /* DetailViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3EC831317909552005ECBBF /* en */,
+			);
+			name = DetailViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3EC831517909552005ECBBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3EC831617909552005ECBBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(SDKROOT)/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3EC831817909552005ECBBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReutersNewsFeedsReader/ReutersNewsFeedsReader-Prefix.pch";
+				INFOPLIST_FILE = "ReutersNewsFeedsReader/ReutersNewsFeedsReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B3EC831917909552005ECBBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReutersNewsFeedsReader/ReutersNewsFeedsReader-Prefix.pch";
+				INFOPLIST_FILE = "ReutersNewsFeedsReader/ReutersNewsFeedsReader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3EC82E317909552005ECBBF /* Build configuration list for PBXProject "ReutersNewsFeedsReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3EC831517909552005ECBBF /* Debug */,
+				B3EC831617909552005ECBBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3EC831717909552005ECBBF /* Build configuration list for PBXNativeTarget "ReutersNewsFeedsReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3EC831817909552005ECBBF /* Debug */,
+				B3EC831917909552005ECBBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3EC82E017909552005ECBBF /* Project object */;
+}
