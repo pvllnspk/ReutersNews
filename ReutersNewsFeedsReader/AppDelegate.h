@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  ReutersNewsFeedsReader
 //
-//  Created by Barney on 7/12/13.
+//  Created by Barney on 7/13/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
@@ -11,9 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) UINavigationController *navigationController;
-
-@property (strong, nonatomic) UISplitViewController *splitViewController;
 
 @end
