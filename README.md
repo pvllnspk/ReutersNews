@@ -1,4 +1,4 @@
 ReutersNewsFeedsReader
 ======================
 
-ReutersNewsFeedsReader
+Reuters News RSS Feeds
