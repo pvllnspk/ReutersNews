@@ -10,9 +10,11 @@
 #import "DetailViewController.h"
 
 @interface MasterViewController () {
-    NSArray *sections;
-    NSArray *newsCategories;
-    NSArray *newsCategoriesURLs;
+    
+    NSDictionary *feedsCategories;
+    NSMutableArray *feedsTitles;
+    NSMutableArray *feedsURLs;
+    
 }
 @end
 
@@ -22,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = NSLocalizedString(@"Reuters News", @"Reuters News");
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             self.clearsSelectionOnViewWillAppear = NO;
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
@@ -35,24 +37,33 @@
 {
     [super viewDidLoad];
     
-    sections = [[NSArray alloc] initWithObjects:@"News", nil];
-    newsCategories = [[NSArray alloc] initWithObjects:@"Top News", @"US News", @"World", nil];
-    newsCategoriesURLs = [[NSArray alloc] initWithObjects:@"http://feeds.reuters.com/reuters/topNews", @"http://feeds.reuters.com/Reuters/domesticNews", @"http://feeds.reuters.com/Reuters/worldNews", nil];
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersNewsRSSFeeds" ofType:@"plist"];
+    feedsCategories = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    feedsTitles = [[NSMutableArray alloc]init];
+    feedsURLs = [[NSMutableArray alloc]init];
+    
+    NSArray *feeds = [feedsCategories allValues];
+    for(id feed in feeds) {
+        [feedsTitles addObjectsFromArray:[feed allKeys]];
+        [feedsURLs addObjectsFromArray:[feed allValues]];
+    }
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [sections count];
+    return [feedsCategories count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [newsCategories count];
+{    
+    return [[feedsCategories valueForKey:[[feedsCategories allKeys] objectAtIndex:section]] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [sections objectAtIndex:section];
+    return [[feedsCategories allKeys] objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,14 +79,16 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [newsCategories objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [feedsTitles objectAtIndex:indexPath.row];
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSString *feedsURL = [newsCategoriesURLs objectAtIndex:indexPath.row];
+    
+     NSString *feedsURL = [feedsURLs objectAtIndex:indexPath.row];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    if (!self.detailViewController) {
