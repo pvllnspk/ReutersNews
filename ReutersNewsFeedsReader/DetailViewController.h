@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class WebViewController;
+
 @interface DetailViewController : UITableViewController
 
+@property (strong, nonatomic) WebViewController *webViewController;
 @property (nonatomic, retain) NSString *feedsURL;
 
 @end

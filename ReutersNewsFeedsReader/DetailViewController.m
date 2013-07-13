@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
+#import "WebViewController.h"
 
 @interface DetailViewController (){
     
@@ -184,22 +185,31 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    //iPhone
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-//	    if (!self.webViewController) {
-//	        self.webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController_iPhone" bundle:nil];
-//	    }
-//	    self.webViewController.item = (MWFeedItem *)[itemsToDisplay objectAtIndex:indexPath.row];
-//        [self.navigationController pushViewController:self.webViewController animated:YES];
-//        
-//        // Deselect
-//        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-//        
-//    }
-//    //iPad
-//    else {
-//        self.webViewController.item = (MWFeedItem *)[itemsToDisplay objectAtIndex:indexPath.row];
-//    }
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        
+	    if (!self.webViewController) {
+	        self.webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController_iPhone" bundle:nil];
+	    }
+	    self.webViewController.item = (MWFeedItem *)[itemsToDisplay objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:self.webViewController animated:YES];
+        
+        // Deselect
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    }
+ 
+    else {
+        
+        if (!self.webViewController) {
+	        self.webViewController = [[WebViewController alloc] initWithNibName:@"WebViewController_iPad" bundle:nil];
+	    }
+	    self.webViewController.item = (MWFeedItem *)[itemsToDisplay objectAtIndex:indexPath.row];
+        [self.navigationController pushViewController:self.webViewController animated:YES];
+        
+        // Deselect
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+    }
 }
 
 

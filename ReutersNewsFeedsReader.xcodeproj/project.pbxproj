@@ -37,6 +37,9 @@
 		B3E0FAC917914E2300BD4CC4 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0FABC17914E2300BD4CC4 /* IIWrapController.m */; };
 		B3E0FACB17914E7200BD4CC4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FACA17914E7200BD4CC4 /* QuartzCore.framework */; };
 		B3E0FACD17914E8500BD4CC4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FACC17914E8500BD4CC4 /* libxml2.dylib */; };
+		B3E0FB061791604E00BD4CC4 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0FB041791604D00BD4CC4 /* WebViewController.m */; };
+		B3E0FB0E179160E300BD4CC4 /* WebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E0FB0A179160E200BD4CC4 /* WebViewController_iPad.xib */; };
+		B3E0FB0F179160E300BD4CC4 /* WebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E0FB0C179160E300BD4CC4 /* WebViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,10 @@
 		B3E0FABC17914E2300BD4CC4 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		B3E0FACA17914E7200BD4CC4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3E0FACC17914E8500BD4CC4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B3E0FB031791604D00BD4CC4 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		B3E0FB041791604D00BD4CC4 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		B3E0FB0B179160E300BD4CC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WebViewController_iPad.xib; sourceTree = "<group>"; };
+		B3E0FB0D179160E300BD4CC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WebViewController_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +153,14 @@
 				B3E0FA8617914DEE00BD4CC4 /* MasterViewController.m */,
 				B3E0FA8817914DEE00BD4CC4 /* DetailViewController.h */,
 				B3E0FA8917914DEE00BD4CC4 /* DetailViewController.m */,
+				B3E0FB031791604D00BD4CC4 /* WebViewController.h */,
+				B3E0FB041791604D00BD4CC4 /* WebViewController.m */,
 				B3E0FA8B17914DEE00BD4CC4 /* MasterViewController_iPhone.xib */,
 				B3E0FA8E17914DEE00BD4CC4 /* MasterViewController_iPad.xib */,
 				B3E0FA9117914DEE00BD4CC4 /* DetailViewController_iPhone.xib */,
 				B3E0FA9417914DEE00BD4CC4 /* DetailViewController_iPad.xib */,
+				B3E0FB0C179160E300BD4CC4 /* WebViewController_iPhone.xib */,
+				B3E0FB0A179160E200BD4CC4 /* WebViewController_iPad.xib */,
 				B3E0FA9C17914E2200BD4CC4 /* Vendor */,
 				B3E0FA7417914DEE00BD4CC4 /* Supporting Files */,
 			);
@@ -303,6 +314,8 @@
 				B3E0FA9017914DEE00BD4CC4 /* MasterViewController_iPad.xib in Resources */,
 				B3E0FA9317914DEE00BD4CC4 /* DetailViewController_iPhone.xib in Resources */,
 				B3E0FA9617914DEE00BD4CC4 /* DetailViewController_iPad.xib in Resources */,
+				B3E0FB0E179160E300BD4CC4 /* WebViewController_iPad.xib in Resources */,
+				B3E0FB0F179160E300BD4CC4 /* WebViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +343,7 @@
 				B3E0FAC717914E2300BD4CC4 /* IISideController.m in Sources */,
 				B3E0FAC817914E2300BD4CC4 /* IIViewDeckController.m in Sources */,
 				B3E0FAC917914E2300BD4CC4 /* IIWrapController.m in Sources */,
+				B3E0FB061791604E00BD4CC4 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +388,22 @@
 				B3E0FA9517914DEE00BD4CC4 /* en */,
 			);
 			name = DetailViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B3E0FB0A179160E200BD4CC4 /* WebViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3E0FB0B179160E300BD4CC4 /* en */,
+			);
+			name = WebViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		B3E0FB0C179160E300BD4CC4 /* WebViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3E0FB0D179160E300BD4CC4 /* en */,
+			);
+			name = WebViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
