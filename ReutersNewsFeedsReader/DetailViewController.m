@@ -10,6 +10,8 @@
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
 #import "WebViewController.h"
+#import "RNController.h"
+#import "DetailTableViewCell.h"
 
 @interface DetailViewController ()
 {
@@ -19,6 +21,8 @@
     
     NSArray *itemsToDisplay;
     NSDateFormatter *formatter;
+    
+    UIRefreshControl *refreshControl;
     
 }
 
@@ -44,14 +48,26 @@
 
 -(void)viewDidLoad
 {
+    
+    UIEdgeInsets tableViewEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+    [self.tableView setContentInset:tableViewEdgeInsets];
+    [self.tableView setScrollIndicatorInsets:tableViewEdgeInsets];
+    
     // Refresh button
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                           target:self
-                                                                                           action:@selector(refresh)];
+//	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+//                                                                                           target:self
+//                                                                                           action:@selector(refresh)];
+    
+    refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl setTintColor:[UIColor colorWithWhite:.75f alpha:1.0]];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
     
     formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateStyle:NSDateFormatterShortStyle];
 	[formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"Cell"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -98,6 +114,8 @@
                                                                            ascending:NO]]];
 	self.tableView.userInteractionEnabled = YES;
 	[self.tableView reloadData];
+    
+    [refreshControl endRefreshing];
 }
 
 
@@ -143,8 +161,12 @@
     }
     [self updateTableWithParsedItems];
 }
+
+
 #pragma mark
 #pragma mark  Table View
+
+
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -158,15 +180,26 @@
     return itemsToDisplay.count;
 }
 
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([RNController isPad]){
+        
+        return 70;
+    }else{
+        
+        return 64;
+    }
+}
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[DetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         //iPhone
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -183,12 +216,13 @@
 		NSString *itemSummary = item.summary ? [item.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
 		
 		// Set
-		cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
-		cell.textLabel.text = itemTitle;
+		cell.firstLevelText.font = [UIFont boldSystemFontOfSize:15];
+		cell.firstLevelText.text = itemTitle;
 		NSMutableString *subtitle = [NSMutableString string];
-		if (item.date) [subtitle appendFormat:@"%@: ", [formatter stringFromDate:item.date]];
-		[subtitle appendString:itemSummary];
-		cell.detailTextLabel.text = subtitle;
+		if (item.date) [subtitle appendFormat:@"%@", [formatter stringFromDate:item.date]];
+//		[subtitle appendString:itemSummary];
+        cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
+		cell.secondLevelText.text = subtitle;
 		
 	}
     return cell;

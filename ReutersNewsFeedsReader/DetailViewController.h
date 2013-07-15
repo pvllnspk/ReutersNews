@@ -10,7 +10,7 @@
 
 @class WebViewController;
 
-@interface DetailViewController : UITableViewController
+@interface DetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) WebViewController *webViewController;
 @property (nonatomic, retain) NSString *feedsURL;
