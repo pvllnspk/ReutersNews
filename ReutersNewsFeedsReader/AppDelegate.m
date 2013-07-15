@@ -8,12 +8,19 @@
 
 #import "AppDelegate.h"
 #import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "AppConfig.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    int cacheSizeMemory = 10*1024*1024;
+    int cacheSizeDisk = 100*1024*1024;
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"rnfrcache"];
+    [NSURLCache setSharedURLCache:sharedCache];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -31,6 +38,11 @@
     }
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 

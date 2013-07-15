@@ -11,7 +11,8 @@
 #import "NSString+HTML.h"
 #import "WebViewController.h"
 
-@interface DetailViewController (){
+@interface DetailViewController ()
+{
     
     MWFeedParser *feedParser;
     NSMutableArray *parsedItems;
@@ -77,7 +78,8 @@
 #pragma mark Parsing
 
 // Reset and reparse
-- (void)refresh {
+- (void)refresh
+{
 	self.title = @"Refreshing...";
 	[parsedItems removeAllObjects];
 	[feedParser stopParsing];
@@ -89,7 +91,8 @@
     }
 }
 
-- (void)updateTableWithParsedItems {
+- (void)updateTableWithParsedItems
+{
 	itemsToDisplay = [parsedItems sortedArrayUsingDescriptors:
                       [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"date"
                                                                            ascending:NO]]];
@@ -101,26 +104,31 @@
 #pragma mark -
 #pragma mark MWFeedParserDelegate
 
-- (void)feedParserDidStart:(MWFeedParser *)parser {
+- (void)feedParserDidStart:(MWFeedParser *)parser
+{
 	NSLog(@"Started Parsing: %@", parser.url);
 }
 
-- (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
+- (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info
+{
 	NSLog(@"Parsed Feed Info: “%@”", info.title);
 	self.title = info.title;
 }
 
-- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
+- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item
+{
 	NSLog(@"Parsed Feed Item: “%@”", item.title);
 	if (item) [parsedItems addObject:item];
 }
 
-- (void)feedParserDidFinish:(MWFeedParser *)parser {
+- (void)feedParserDidFinish:(MWFeedParser *)parser
+{
 	NSLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
     [self updateTableWithParsedItems];
 }
 
-- (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
+- (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error
+{
 	NSLog(@"Finished Parsing With Error: %@", error);
     if (parsedItems.count == 0) {
         self.title = @"Failed"; // Show failed message in title
@@ -139,18 +147,21 @@
 #pragma mark  Table View
 
 // Customize the number of sections in the table view.
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
 // Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return itemsToDisplay.count;
 }
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -183,7 +194,8 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         
