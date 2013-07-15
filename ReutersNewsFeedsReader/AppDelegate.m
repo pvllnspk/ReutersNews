@@ -37,6 +37,9 @@
         
     }
     [self.window makeKeyAndVisible];
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    
     return YES;
 }
 

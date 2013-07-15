@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class DetailTableViewCell;
+
+@protocol DetailTableViewCellDelegate <NSObject>
+
+@optional
+- (void)tableViewLongPressWithCell:(DetailTableViewCell *)cell;
+@end
+
 @interface DetailTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id<DetailTableViewCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *firstLevelText;
 @property (weak, nonatomic) IBOutlet UILabel *secondLevelText;

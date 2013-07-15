@@ -13,7 +13,7 @@
 #import "RNController.h"
 #import "DetailTableViewCell.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, DetailTableViewCellDelegate>
 {
     
     MWFeedParser *feedParser;
@@ -198,6 +198,8 @@
     static NSString *CellIdentifier = @"Cell";
     
     DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    [cell setDelegate:self];
+    
     if (cell == nil) {
         cell = [[DetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
@@ -256,6 +258,11 @@
         [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         
     }
+}
+
+-(void)tableViewLongPressWithCell:(DetailTableViewCell *)cell
+{
+    NSLog(@"tableViewLongPressWithCell");
 }
 
 

@@ -79,7 +79,7 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    cell.textLabel.textColor = [UIColor colorWithRed:63.0f/255.0f green:63.0f/255.0f blue:63.0f/255.0f alpha:1.0f];
     cell.textLabel.text = [feedsTitles objectAtIndex:indexPath.row];
     return cell;
 }

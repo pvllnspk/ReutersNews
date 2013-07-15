@@ -10,23 +10,28 @@
 
 @implementation DetailTableViewCell
 
-@synthesize firstLevelText;
-@synthesize secondLevelText;
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+-(void)awakeFromNib
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    [longPress setMinimumPressDuration:0.6];
+    [longPress setDelegate:self];
+    [self.contentView addGestureRecognizer:longPress];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
 {
-    [super setSelected:selected animated:animated];
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        if (self.delegate)
+        {
+            [self.delegate tableViewLongPressWithCell:self];
+        }
+    }
+}
 
-    // Configure the view for the selected state
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return NO;
 }
 
 @end
