@@ -10,6 +10,7 @@
 #import "MasterViewController.h"
 #import "AppConfig.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -38,7 +39,8 @@
     }
     [self.window makeKeyAndVisible];
     
-    [self.navigationController setNavigationBarHidden:YES];
+    UINavigationBar *bar = [self.navigationController navigationBar];
+    [bar setTintColor:[UIColor colorWithRed:25.0f/255.0f green:25.0f/255.0f blue:25.0f/255.0f alpha:1.0f]];
     
     return YES;
 }

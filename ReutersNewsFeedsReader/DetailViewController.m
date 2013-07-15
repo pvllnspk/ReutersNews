@@ -49,7 +49,7 @@
 -(void)viewDidLoad
 {
     
-    UIEdgeInsets tableViewEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 0);
+    UIEdgeInsets tableViewEdgeInsets = UIEdgeInsetsMake(5, 0, 5, 0);
     [self.tableView setContentInset:tableViewEdgeInsets];
     [self.tableView setScrollIndicatorInsets:tableViewEdgeInsets];
     
