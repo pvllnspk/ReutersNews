@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3E051D7179528EF00B155F0 /* view_phone.html in Resources */ = {isa = PBXBuildFile; fileRef = B3E051D6179528EF00B155F0 /* view_phone.html */; };
+		B3E051D91795401400B155F0 /* view_pad.html in Resources */ = {isa = PBXBuildFile; fileRef = B3E051D81795401400B155F0 /* view_pad.html */; };
 		B3E0FA6E17914DEE00BD4CC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA6D17914DEE00BD4CC4 /* UIKit.framework */; };
 		B3E0FA7017914DEE00BD4CC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA6F17914DEE00BD4CC4 /* Foundation.framework */; };
 		B3E0FA7217914DEE00BD4CC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA7117914DEE00BD4CC4 /* CoreGraphics.framework */; };
@@ -47,9 +49,12 @@
 		B3E6239D1793C7FD00726150 /* RNController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E6239C1793C7FD00726150 /* RNController.m */; };
 		B3E623A01793F8DD00726150 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E6239F1793F8DD00726150 /* DetailTableViewCell.m */; };
 		B3E623A417942B9D00726150 /* DetailTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E623A317942B9C00726150 /* DetailTableViewCell_iPhone.xib */; };
+		B3E623A617947EEC00726150 /* DetailTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E623A517947EEB00726150 /* DetailTableViewCell_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3E051D6179528EF00B155F0 /* view_phone.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = view_phone.html; sourceTree = "<group>"; };
+		B3E051D81795401400B155F0 /* view_pad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = view_pad.html; sourceTree = "<group>"; };
 		B3E0FA6A17914DEE00BD4CC4 /* ReutersNewsFeedsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReutersNewsFeedsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E0FA6D17914DEE00BD4CC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3E0FA6F17914DEE00BD4CC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +121,7 @@
 		B3E6239E1793F8DD00726150 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
 		B3E6239F1793F8DD00726150 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		B3E623A317942B9C00726150 /* DetailTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		B3E623A517947EEB00726150 /* DetailTableViewCell_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 				B3E6239B1793C7FD00726150 /* RNController.h */,
 				B3E6239C1793C7FD00726150 /* RNController.m */,
 				B3E623A317942B9C00726150 /* DetailTableViewCell_iPhone.xib */,
+				B3E623A517947EEB00726150 /* DetailTableViewCell_iPad.xib */,
 				B3E0FA8B17914DEE00BD4CC4 /* MasterViewController_iPhone.xib */,
 				B3E0FA8E17914DEE00BD4CC4 /* MasterViewController_iPad.xib */,
 				B3E0FA9117914DEE00BD4CC4 /* DetailViewController_iPhone.xib */,
@@ -208,6 +215,8 @@
 				B3E0FA8117914DEE00BD4CC4 /* Default@2x.png */,
 				B3E0FA8317914DEE00BD4CC4 /* Default-568h@2x.png */,
 				B3E0FB101791938500BD4CC4 /* ReutersNewsRSSFeeds.plist */,
+				B3E051D6179528EF00B155F0 /* view_phone.html */,
+				B3E051D81795401400B155F0 /* view_pad.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -350,6 +359,9 @@
 				B3E0FB111791938500BD4CC4 /* ReutersNewsRSSFeeds.plist in Resources */,
 				B3E6239A1793BBB000726150 /* reuters125.png in Resources */,
 				B3E623A417942B9D00726150 /* DetailTableViewCell_iPhone.xib in Resources */,
+				B3E623A617947EEC00726150 /* DetailTableViewCell_iPad.xib in Resources */,
+				B3E051D7179528EF00B155F0 /* view_phone.html in Resources */,
+				B3E051D91795401400B155F0 /* view_pad.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

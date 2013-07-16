@@ -12,6 +12,7 @@
 #import "WebViewController.h"
 #import "RNController.h"
 #import "DetailTableViewCell.h"
+#import "MBProgressHUD.h"
 
 @interface DetailViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, DetailTableViewCellDelegate>
 {
@@ -24,6 +25,7 @@
     
     UIRefreshControl *refreshControl;
     
+    MBProgressHUD *HUD;
 }
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -36,15 +38,6 @@
 
 #pragma mark - Managing the detail item
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = NSLocalizedString(@"Detail", @"Detail");
-    }
-    return self;
-}
 
 -(void)viewDidLoad
 {
@@ -67,7 +60,19 @@
 	[formatter setDateStyle:NSDateFormatterShortStyle];
 	[formatter setTimeStyle:NSDateFormatterShortStyle];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    if([RNController isPad]){
+        [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    }else{
+        [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    }
+    
+//    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+//    [self.view addSubview:HUD];
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    HUD.mode = MBProgressHUDModeIndeterminate;
+    [self.view addSubview:HUD];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -75,7 +80,7 @@
     parsedItems = [[NSMutableArray alloc] init];
 	itemsToDisplay = [NSArray array];
     
-    self.title = @"Loading...";
+//    self.title = @"Loading...";
     NSURL *feedUrl = [NSURL URLWithString:feedsURL];
     feedParser = [[MWFeedParser alloc] initWithFeedURL:feedUrl];
     feedParser.delegate = self;
@@ -83,6 +88,9 @@
     feedParser.connectionType = ConnectionTypeAsynchronously;
     [feedParser parse];
     self.tableView.userInteractionEnabled = NO;
+    
+    HUD.labelText = @"Loading...";
+    [HUD show:YES];
     
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
@@ -96,11 +104,14 @@
 // Reset and reparse
 - (void)refresh
 {
-	self.title = @"Refreshing...";
+//	self.title = @"Refreshing...";
 	[parsedItems removeAllObjects];
 	[feedParser stopParsing];
 	[feedParser parse];
 	self.tableView.userInteractionEnabled = NO;
+    
+     HUD.labelText = @"Refreshing...";
+    [HUD show:YES];
     
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
@@ -113,9 +124,14 @@
                       [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"date"
                                                                            ascending:NO]]];
 	self.tableView.userInteractionEnabled = YES;
+    
+    [HUD hide:YES];
+    
 	[self.tableView reloadData];
     
     [refreshControl endRefreshing];
+    
+    
 }
 
 
@@ -130,7 +146,7 @@
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info
 {
 	NSLog(@"Parsed Feed Info: “%@”", info.title);
-	self.title = info.title;
+//	self.title = info.title;
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item
@@ -184,7 +200,7 @@
 {
     if([RNController isPad]){
         
-        return 70;
+        return 115;
     }else{
         
         return 64;
@@ -221,10 +237,20 @@
 		cell.firstLevelText.font = [UIFont boldSystemFontOfSize:15];
 		cell.firstLevelText.text = itemTitle;
 		NSMutableString *subtitle = [NSMutableString string];
-		if (item.date) [subtitle appendFormat:@"%@", [formatter stringFromDate:item.date]];
-//		[subtitle appendString:itemSummary];
-        cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
-		cell.secondLevelText.text = subtitle;
+        
+        if([RNController isPad]){
+            
+           [subtitle appendString:itemSummary];
+            cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
+            cell.secondLevelText.text = subtitle;
+            cell.thirdLevelText.text = [formatter stringFromDate:item.date];
+        }else
+        {
+            cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
+            cell.secondLevelText.text = [formatter stringFromDate:item.date];
+        }
+        
+ 
 		
 	}
     return cell;

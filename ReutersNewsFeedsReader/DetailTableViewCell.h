@@ -22,5 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *firstLevelText;
 @property (weak, nonatomic) IBOutlet UILabel *secondLevelText;
+@property (weak, nonatomic) IBOutlet UILabel *thirdLevelText;
 
 @end

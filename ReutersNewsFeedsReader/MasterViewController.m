@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "RNController.h"
 
 @interface MasterViewController () {
     
@@ -61,6 +62,17 @@
     return [[feedsCategories valueForKey:[[feedsCategories allKeys] objectAtIndex:section]] count];
 }
 
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([RNController isPad]){
+        
+        return 64;
+    }else{
+        
+        return 46;
+    }
+}
+
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 320.0, 22.0)];
@@ -102,19 +114,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-     NSString *feedsURL = [feedsURLs objectAtIndex:indexPath.row];
+    NSString *feedsURL = [feedsURLs objectAtIndex:indexPath.row];
+    NSString *feedsTitle = [feedsTitles objectAtIndex:indexPath.row];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    if (!self.detailViewController) {
 	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
 	    }
 	    self.detailViewController.feedsURL = feedsURL;
+        self.detailViewController.title = feedsTitle;
         [self.navigationController pushViewController:self.detailViewController animated:YES];
     } else {
         if (!self.detailViewController) {
 	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil];
 	    }
 	    self.detailViewController.feedsURL = feedsURL;
+        self.detailViewController.title = feedsTitle;
         [self.navigationController pushViewController:self.detailViewController animated:YES];
     }
 }

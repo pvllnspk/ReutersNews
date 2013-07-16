@@ -63,4 +63,30 @@
     return nil;
 }
 
+-(NSString *)lastStringBetweenString:(NSString *)start andString:(NSString *)end
+{
+    NSRange startRange = [self rangeOfString:start options:NSBackwardsSearch];
+    if (startRange.location != NSNotFound) {
+        NSRange targetRange;
+        targetRange.location = startRange.location + startRange.length;
+        targetRange.length = [self length] - targetRange.location;
+        NSRange endRange = [self rangeOfString:end options:0 range:targetRange];
+        if (endRange.location != NSNotFound) {
+            targetRange.length = endRange.location - targetRange.location;
+            return [self substringWithRange:targetRange];
+        }
+    }
+    return nil;
+}
+
+- (NSString *)stringByStrippingHTML
+{
+    NSRange r;
+    NSString *s = [self copy];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
+}
+
+
 @end
