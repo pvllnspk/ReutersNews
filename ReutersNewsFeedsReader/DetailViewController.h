@@ -13,6 +13,6 @@
 @interface DetailViewController : UITableViewController
 
 @property (strong, nonatomic) WebViewController *webViewController;
-@property (nonatomic, retain) NSString *feedsURL;
+@property (nonatomic, retain, setter = setFeedsUrl:) NSString *feedsURL;
 
 @end

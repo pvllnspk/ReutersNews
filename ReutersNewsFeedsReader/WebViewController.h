@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MWFeedItem.h"
+
+@class MWFeedItem;
 
 @interface WebViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (nonatomic, retain) MWFeedItem *item;
+@property (nonatomic, retain) NSArray *feeds;
+
+- (void) setFeed:(MWFeedItem *)feed;
 
 @end
