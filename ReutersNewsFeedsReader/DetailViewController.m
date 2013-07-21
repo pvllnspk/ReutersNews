@@ -12,6 +12,7 @@
 #import "WebViewController.h"
 #import "DetailTableViewCell.h"
 #import "MBProgressHUD.h"
+#import "RNActivityViewController.h"
 
 // Feed Parser Logging
 #if 0 // Set to 1 to enable Feed Parser Logging
@@ -45,6 +46,9 @@
 
 -(void) setFeedsUrl:(NSString *)feedsUrl
 {
+    
+    NSLog(@"setFeedsUrl  %@ ",feedsUrl);
+    
     _parsedItems = [[NSMutableArray alloc] init];
 	_itemsToDisplay = [NSArray array];
     
@@ -61,7 +65,7 @@
     
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }   
+    }
 }
 
 
@@ -70,7 +74,7 @@
 
 -(void)viewDidLoad
 {
-    UIEdgeInsets tableViewEdgeInsets = UIEdgeInsetsMake(0, 0, 5, 0);
+    UIEdgeInsets tableViewEdgeInsets = UIEdgeInsetsMake(3, 0, 3, 0);
     [self.tableView setContentInset:tableViewEdgeInsets];
     [self.tableView setScrollIndicatorInsets:tableViewEdgeInsets];
     
@@ -127,6 +131,8 @@
     [_HUD hide:YES];
     
 	[self.tableView reloadData];
+    //restore tableview scroll
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     
     [_refreshControl endRefreshing];
 }
@@ -273,7 +279,25 @@
 
 -(void)tableViewLongPressWithCell:(DetailTableViewCell *)cell
 {
-    NSLog(@"tableViewLongPressWithCell");
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath)
+    {
+        NSURL *url = [NSURL URLWithString:((MWFeedItem *)[_itemsToDisplay objectAtIndex:indexPath.row]).link];
+        UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
+        if ([RNController isPad])
+        {
+//            CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
+//            cellFrame.size.height = cell.frame.size.height/2;
+//            _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+//            [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown animated:YES];
+            [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+        
+        }
+        else
+        {
+            [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+        }
+    }
 }
 
 @end

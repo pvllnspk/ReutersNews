@@ -11,6 +11,7 @@
 #import "TFHpple.h"
 #import "NSString+Additions.h"
 #import "RNController.h"
+#import "RNActivityViewController.h"
 
 typedef NS_ENUM(NSInteger, FeedTransition)
 {
@@ -41,7 +42,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
     
     _currentFeed = feed;
     
-    //clear WebView content
+    //clear the webview content
     [_webView stringByEvaluatingJavaScriptFromString:@"document.open();document.close();"];
     
     //load a local html file
@@ -74,7 +75,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
                 TFHppleElement *element = [textNodes objectAtIndex:0];
                 TFHppleElement *childElement =[element firstChildWithTagName: @"img"];
                 feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<img src='%@' border='0'/>",[childElement objectForKey:@"src"]]];
-                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='domain'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
+                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
             }
             
             //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
@@ -115,6 +116,8 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 -(void)viewDidLoad
 {
     [_webView setDelegate:self];
+    //set offset for the webview
+    [[_webView scrollView] setContentInset:UIEdgeInsetsMake(0, 0, 40, 0)];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -146,8 +149,8 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 #pragma mark -
 #pragma mark User Interaction Callbacks
 
-- (IBAction)tabButtonPressed:(id)sender {
-    
+- (IBAction)tabButtonPressed:(id)sender
+{
     int buttonTag = [sender tag];
     switch (buttonTag) {
         case 0:
@@ -158,17 +161,29 @@ typedef NS_ENUM(NSInteger, FeedTransition)
         case 1:
             
             [self transitionToType:FeedTransitionPrevious];
-
+            
             break;
         case 2:
             
-             [self transitionToType:FeedTransitionNext];
+            [self transitionToType:FeedTransitionNext];
             
             break;
         case 3:
+        {
+            NSURL *url = [NSURL URLWithString:_currentFeed.link];
+            UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
+            if ([RNController isPad])
+            {
+//                _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+//                [_popoverController presentPopoverFromRect:self.shareButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+                [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
             
-            break;
-        default:
+            }
+            else
+            {
+                [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+            }
+        }
             break;
     }
 }
