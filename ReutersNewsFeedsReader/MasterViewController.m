@@ -12,8 +12,6 @@
 @implementation MasterViewController
 {
     NSDictionary *_feedsCategories;
-    NSMutableArray *_feedsTitles;
-    NSMutableArray *_feedsURLs;
 }
 
 
@@ -41,15 +39,6 @@
     //load a local plist file with feeds categories
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersNewsRSSFeeds" ofType:@"plist"];
     _feedsCategories = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    
-    _feedsTitles = [[NSMutableArray alloc]init];
-    _feedsURLs = [[NSMutableArray alloc]init];
-    
-    NSArray *feeds = [_feedsCategories allValues];
-    for(id feed in feeds){
-        [_feedsTitles addObjectsFromArray:[feed allKeys]];
-        [_feedsURLs addObjectsFromArray:[feed allValues]];
-    }
 }
 
 
@@ -112,14 +101,17 @@
     }
     
     cell.textLabel.textColor = [UIColor colorWithRed:63.0f/255.0f green:63.0f/255.0f blue:63.0f/255.0f alpha:1.0f];
-    cell.textLabel.text = [_feedsTitles objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[[_feedsCategories valueForKey:[[_feedsCategories allKeys] objectAtIndex:indexPath.section]] allKeys]
+                           objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *feedsURL = [_feedsURLs objectAtIndex:indexPath.row];
-    NSString *feedsTitle = [_feedsTitles objectAtIndex:indexPath.row];
+    NSString *feedsURL = [[[_feedsCategories valueForKey:[[_feedsCategories allKeys] objectAtIndex:indexPath.section]] allValues]
+                          objectAtIndex:indexPath.row];
+    NSString *feedsTitle = [[[_feedsCategories valueForKey:[[_feedsCategories allKeys] objectAtIndex:indexPath.section]] allKeys]
+                            objectAtIndex:indexPath.row];
     
     if([RNController isPad])
     {

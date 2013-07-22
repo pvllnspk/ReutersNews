@@ -68,8 +68,8 @@ typedef NS_ENUM(NSInteger, FeedTransition)
              //extract images data
             result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-            NSString *textXpathQueryString = @"//div[@id='articleImage']";
-            NSArray *textNodes = [doc searchWithXPathQuery:textXpathQueryString];
+            NSString *findImagesXpathQueryString = @"//div[@id='articleImage']";
+            NSArray *textNodes = [doc searchWithXPathQuery:findImagesXpathQueryString];
             
             if([textNodes count]>0)
             {
@@ -78,6 +78,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
                 feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<img src='%@' border='0'/>",[childElement objectForKey:@"src"]]];
                 feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
             }
+        
             
             //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
             {
@@ -97,8 +98,16 @@ typedef NS_ENUM(NSInteger, FeedTransition)
                     }
                 }
                 
-                NSRange location = [feedText rangeOfString:@"\"></span>"];
-                feedText = [feedText stringByReplacingCharactersInRange:location withString:@""];
+                //fix
+                @try {
+                    NSRange location = [feedText rangeOfString:@"\"></span>"];
+                    feedText = [feedText stringByReplacingCharactersInRange:location withString:@""];
+                }
+                @catch (NSException *exception) {
+                    NSLog(@"%@",exception);
+                }
+                @finally {
+                }
             }
         }
         
