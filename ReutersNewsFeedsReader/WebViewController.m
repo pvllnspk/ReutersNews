@@ -12,6 +12,7 @@
 #import "NSString+Additions.h"
 #import "RNController.h"
 #import "RNActivityViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, FeedTransition)
 {
@@ -79,24 +80,25 @@ typedef NS_ENUM(NSInteger, FeedTransition)
             }
             
             //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
-            for(int i=0;i<20;i++){
-                NSString *str = [result stringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
-                if(str){
-                    
-                    feedText = [feedText stringByAppendingString:str];
-                    feedText = [feedText stringByAppendingString:@"\n\n\t"];
-                    
+            {
+                for(int i=0;i<20;i++){
+                    NSString *str = [result stringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
+                    if(str)
+                    {
+                        feedText = [feedText stringByAppendingString:str];
+                    }
                 }
-            }
-            
-            for(int i=0;i<20;i++){
-                NSString *str = [result lastStringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
-                if(str && [feedText rangeOfString:str].location == NSNotFound){
-                    
-                    feedText = [feedText stringByAppendingString:str];
-                    feedText = [feedText stringByAppendingString:@"\n\n\t"];
-                    
+                
+                for(int i=0;i<20;i++){
+                    NSString *str = [result lastStringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
+                    if(str && [feedText rangeOfString:str].location == NSNotFound)
+                    {
+                        feedText = [feedText stringByAppendingString:str];
+                    }
                 }
+                
+                NSRange location = [feedText rangeOfString:@"\"></span>"];
+                feedText = [feedText stringByReplacingCharactersInRange:location withString:@""];
             }
         }
         
@@ -195,6 +197,24 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 
 -(void)transitionToType:(FeedTransition) transitionType
 {
+    CABasicAnimation *stretchAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.y"];
+    [stretchAnimation setToValue:[NSNumber numberWithFloat:1.02]];
+    [stretchAnimation setRemovedOnCompletion:YES];
+    [stretchAnimation setFillMode:kCAFillModeRemoved];
+    [stretchAnimation setAutoreverses:YES];
+    [stretchAnimation setDuration:0.2];
+    [stretchAnimation setDelegate:self];
+    [stretchAnimation setBeginTime:CACurrentMediaTime() + 0.35];
+    [stretchAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [self.view.layer addAnimation:stretchAnimation forKey:@"stretchAnimation"];
+    CATransition *animation = [CATransition animation];
+    [animation setType:kCATransitionPush];
+    [animation setSubtype:(transitionType == FeedTransitionNext ? kCATransitionFromTop : kCATransitionFromBottom)];
+    [animation setDuration:0.65f];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [[self.webView layer] addAnimation:animation forKey:nil];
+    
+    
     switch (transitionType) {
         case FeedTransitionNext:
             
