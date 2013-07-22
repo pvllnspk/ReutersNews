@@ -20,6 +20,7 @@
 		B343B182179BCE0C00FDED34 /* FeedsTableViewCell_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B343B17E179BCE0C00FDED34 /* FeedsTableViewCell_iPad.xib */; };
 		B343B183179BCE0C00FDED34 /* FeedsTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B343B180179BCE0C00FDED34 /* FeedsTableViewCell_iPhone.xib */; };
 		B343B186179BDB8E00FDED34 /* RNActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B343B185179BDB8E00FDED34 /* RNActivityViewController.m */; };
+		B343B192179DC56000FDED34 /* RNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B343B191179DC55F00FDED34 /* RNNavigationController.m */; };
 		B3E051D7179528EF00B155F0 /* view_phone.html in Resources */ = {isa = PBXBuildFile; fileRef = B3E051D6179528EF00B155F0 /* view_phone.html */; };
 		B3E051D91795401400B155F0 /* view_pad.html in Resources */ = {isa = PBXBuildFile; fileRef = B3E051D81795401400B155F0 /* view_pad.html */; };
 		B3E051DE1795DAB500B155F0 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E051DA1795DAB300B155F0 /* shadow.png */; };
@@ -65,7 +66,7 @@
 		B3E0FB111791938500BD4CC4 /* ReutersNewsRSSFeeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3E0FB101791938500BD4CC4 /* ReutersNewsRSSFeeds.plist */; };
 		B3E0FB1B1791D28F00BD4CC4 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E0FB1A1791D28F00BD4CC4 /* NSString+Additions.m */; };
 		B3E6239A1793BBB000726150 /* reuters125.png in Resources */ = {isa = PBXBuildFile; fileRef = B3E623991793BBB000726150 /* reuters125.png */; };
-		B3E6239D1793C7FD00726150 /* RNController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E6239C1793C7FD00726150 /* RNController.m */; };
+		B3E6239D1793C7FD00726150 /* RNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E6239C1793C7FD00726150 /* RNHelper.m */; };
 		B3E623A01793F8DD00726150 /* FeedsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E6239F1793F8DD00726150 /* FeedsTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,8 @@
 		B343B181179BCE0C00FDED34 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FeedsTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		B343B184179BDB8E00FDED34 /* RNActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityViewController.h; sourceTree = "<group>"; };
 		B343B185179BDB8E00FDED34 /* RNActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityViewController.m; sourceTree = "<group>"; };
+		B343B190179DC55F00FDED34 /* RNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNavigationController.h; sourceTree = "<group>"; };
+		B343B191179DC55F00FDED34 /* RNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNavigationController.m; sourceTree = "<group>"; };
 		B3E051D6179528EF00B155F0 /* view_phone.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = view_phone.html; sourceTree = "<group>"; };
 		B3E051D81795401400B155F0 /* view_pad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = view_pad.html; sourceTree = "<group>"; };
 		B3E051DA1795DAB300B155F0 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
@@ -151,8 +154,8 @@
 		B3E0FB191791D28F00BD4CC4 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		B3E0FB1A1791D28F00BD4CC4 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B3E623991793BBB000726150 /* reuters125.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reuters125.png; sourceTree = "<group>"; };
-		B3E6239B1793C7FD00726150 /* RNController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNController.h; sourceTree = "<group>"; };
-		B3E6239C1793C7FD00726150 /* RNController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNController.m; sourceTree = "<group>"; };
+		B3E6239B1793C7FD00726150 /* RNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHelper.h; sourceTree = "<group>"; };
+		B3E6239C1793C7FD00726150 /* RNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHelper.m; sourceTree = "<group>"; };
 		B3E6239E1793F8DD00726150 /* FeedsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsTableViewCell.h; sourceTree = "<group>"; };
 		B3E6239F1793F8DD00726150 /* FeedsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,10 +227,12 @@
 			children = (
 				B3E0FB191791D28F00BD4CC4 /* NSString+Additions.h */,
 				B3E0FB1A1791D28F00BD4CC4 /* NSString+Additions.m */,
-				B3E6239B1793C7FD00726150 /* RNController.h */,
-				B3E6239C1793C7FD00726150 /* RNController.m */,
+				B3E6239B1793C7FD00726150 /* RNHelper.h */,
+				B3E6239C1793C7FD00726150 /* RNHelper.m */,
 				B343B184179BDB8E00FDED34 /* RNActivityViewController.h */,
 				B343B185179BDB8E00FDED34 /* RNActivityViewController.m */,
+				B343B190179DC55F00FDED34 /* RNNavigationController.h */,
+				B343B191179DC55F00FDED34 /* RNNavigationController.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -535,11 +540,12 @@
 				B3E0FAC617914E2300BD4CC4 /* NSString+HTML.m in Sources */,
 				B3E0FB061791604E00BD4CC4 /* WebViewController.m in Sources */,
 				B3E0FB1B1791D28F00BD4CC4 /* NSString+Additions.m in Sources */,
-				B3E6239D1793C7FD00726150 /* RNController.m in Sources */,
+				B3E6239D1793C7FD00726150 /* RNHelper.m in Sources */,
 				B3E623A01793F8DD00726150 /* FeedsTableViewCell.m in Sources */,
 				B343B171179BCC7000FDED34 /* ReadabilityActivity.m in Sources */,
 				B343B17D179BCD8B00FDED34 /* TUSafariActivity.m in Sources */,
 				B343B186179BDB8E00FDED34 /* RNActivityViewController.m in Sources */,
+				B343B192179DC56000FDED34 /* RNNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

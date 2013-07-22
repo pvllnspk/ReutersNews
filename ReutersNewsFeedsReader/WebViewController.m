@@ -10,7 +10,7 @@
 #import "MWFeedItem.h"
 #import "TFHpple.h"
 #import "NSString+Additions.h"
-#import "RNController.h"
+#import "RNHelper.h"
 #import "RNActivityViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
     [_webView stringByEvaluatingJavaScriptFromString:@"document.open();document.close();"];
     
     //load a local html file
-    NSString* filePath = [RNController isPad]?[[NSBundle mainBundle] pathForResource:@"view_pad" ofType:@"html"]:[[NSBundle mainBundle] pathForResource:@"view_phone" ofType:@"html"];
+    NSString* filePath = [RNHelper isPad]?[[NSBundle mainBundle] pathForResource:@"view_pad" ofType:@"html"]:[[NSBundle mainBundle] pathForResource:@"view_phone" ofType:@"html"];
     NSMutableString* html = [NSMutableString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [html replaceOccurrencesOfString:@"[title]" withString:[feed.title stringByStrippingHTML] options:0 range:NSMakeRange(0, html.length)];
     [_webView loadHTMLString:html baseURL:nil];
@@ -186,7 +186,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
         {
             NSURL *url = [NSURL URLWithString:_currentFeed.link];
             UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
-            if ([RNController isPad])
+            if ([RNHelper isPad])
             {
                 [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
             }

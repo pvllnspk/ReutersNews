@@ -9,6 +9,6 @@
 #ifndef ReutersNewsFeedsReader_AppConfig_h
 #define ReutersNewsFeedsReader_AppConfig_h
 
-#define key @"key"
+#define APP_VERSION @"0.1.0"
 
 #endif

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CategoriesViewController.h"
 #import "AppConfig.h"
+#import "RNNavigationController.h"
 
 
 @implementation AppDelegate
@@ -22,16 +23,16 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if ([RNController isPad])
+    if ([RNHelper isPad])
     {
         CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPad" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:categoriesViewController];
+        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
         self.window.rootViewController = self.navigationController;
         
     } else
     {
         CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPhone" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:categoriesViewController];
+        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
         self.window.rootViewController = self.navigationController;
         
     }

@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "RNController.h"
+#import "RNHelper.h"
 
-@implementation RNController
+@implementation RNHelper
 
 + (id)sharedController
 {
     static dispatch_once_t onceToken;
-    static RNController *rnController;
+    static RNHelper *rnController;
     dispatch_once(&onceToken, ^{
         rnController = [[self alloc] init];
     });

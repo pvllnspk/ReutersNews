@@ -84,7 +84,7 @@
 	[_formatter setDateStyle:NSDateFormatterShortStyle];
 	[_formatter setTimeStyle:NSDateFormatterShortStyle];
     
-    if([RNController isPad])
+    if([RNHelper isPad])
     {
         [self.tableView registerNib:[UINib nibWithNibName:@"FeedsTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"Cell"];
     }
@@ -194,7 +194,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([RNController isPad])
+    if([RNHelper isPad])
     {
         return 115;
     }
@@ -215,7 +215,7 @@
     {
         cell = [[FeedsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
-        if (![RNController isPad])
+        if (![RNHelper isPad])
         {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
@@ -234,7 +234,7 @@
 		cell.firstLevelText.text = itemTitle;
 		NSMutableString *subtitle = [NSMutableString string];
         
-        if([RNController isPad])
+        if([RNHelper isPad])
         {
            [subtitle appendString:itemSummary];
             cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
@@ -252,7 +252,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([RNController isPad ])
+    if([RNHelper isPad ])
     {
         if (!self.webViewController)
         {
@@ -281,7 +281,7 @@
     {
         NSURL *url = [NSURL URLWithString:((MWFeedItem *)[_itemsToDisplay objectAtIndex:indexPath.row]).link];
         UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
-        if ([RNController isPad])
+        if ([RNHelper isPad])
         {
             [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
         }

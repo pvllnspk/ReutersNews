@@ -23,7 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Reuters News", @"Reuters News");
-        if ([RNController isPad])
+        if ([RNHelper isPad])
         {
             self.clearsSelectionOnViewWillAppear = NO;
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
@@ -57,7 +57,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([RNController isPad])
+    if([RNHelper isPad])
     {
         return 64;
     }
@@ -94,7 +94,7 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        if (![RNController isPad])
+        if (![RNHelper isPad])
         {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
@@ -113,7 +113,7 @@
     NSString *feedsTitle = [[[_feedsCategories valueForKey:[[_feedsCategories allKeys] objectAtIndex:indexPath.section]] allKeys]
                             objectAtIndex:indexPath.row];
     
-    if([RNController isPad])
+    if([RNHelper isPad])
     {
         if (!self.feedsViewController)
         {

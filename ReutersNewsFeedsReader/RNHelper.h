@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RNController : NSObject
+@interface RNHelper : NSObject
 
 + (id)sharedController;
 + (BOOL)isPad;
