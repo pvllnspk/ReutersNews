@@ -1,5 +1,5 @@
 //
-//  DetailViewTableViewCell.h
+//  FeedsTableViewCell.h
 //  ReutersNewsFeedsReader
 //
 //  Created by Barney on 7/15/13.
@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@class DetailTableViewCell;
+@class FeedsTableViewCell;
 
-@protocol DetailTableViewCellDelegate <NSObject>
+@protocol FeedsTableViewCellDelegate <NSObject>
 
 @optional
-- (void)tableViewLongPressWithCell:(DetailTableViewCell *)cell;
+- (void)tableViewLongPressWithCell:(FeedsTableViewCell *)cell;
 @end
 
-@interface DetailTableViewCell : UITableViewCell
+@interface FeedsTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) id<DetailTableViewCellDelegate> delegate;
+@property (weak, nonatomic) id<FeedsTableViewCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *firstLevelText;
 @property (weak, nonatomic) IBOutlet UILabel *secondLevelText;

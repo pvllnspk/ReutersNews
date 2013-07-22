@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  FeedsViewController.h
 //  ReutersNewsFeedsReader
 //
 //  Created by Barney on 7/13/13.
@@ -10,7 +10,7 @@
 
 @class WebViewController;
 
-@interface DetailViewController : UITableViewController
+@interface FeedsViewController : UITableViewController
 
 @property (strong, nonatomic) WebViewController *webViewController;
 @property (nonatomic, retain, setter = setFeedsUrl:) NSString *feedsURL;

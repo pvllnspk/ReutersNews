@@ -1,15 +1,15 @@
 //
-//  MasterViewController.m
+//  CategoriesViewController.m
 //  ReutersNewsFeedsReader
 //
 //  Created by Barney on 7/13/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "CategoriesViewController.h"
+#import "FeedsViewController.h"
 
-@implementation MasterViewController
+@implementation CategoriesViewController
 {
     NSDictionary *_feedsCategories;
 }
@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
     
-    //load a local plist file with feeds categories
+    //load the local plist file with all feeds categories
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersNewsRSSFeeds" ofType:@"plist"];
     _feedsCategories = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
 }
@@ -69,7 +69,7 @@
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    //change color and text of the tablevew sections
+    //change a color and text of the tablevew sections
     UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 320.0, 22.0)];
     customView.backgroundColor = [UIColor colorWithRed:63.0f/255.0f green:63.0f/255.0f blue:63.0f/255.0f alpha:0.5f];
     
@@ -115,22 +115,22 @@
     
     if([RNController isPad])
     {
-        if (!self.detailViewController)
+        if (!self.feedsViewController)
         {
-	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil];
+	        self.feedsViewController = [[FeedsViewController alloc] initWithNibName:@"FeedsViewController_iPad" bundle:nil];
 	    }
     }
     else
     {
-        if (!self.detailViewController)
+        if (!self.feedsViewController)
         {
-	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
+	        self.feedsViewController = [[FeedsViewController alloc] initWithNibName:@"FeedsViewController_iPhone" bundle:nil];
 	    }
     }
     
-    [self.detailViewController setFeedsUrl:feedsURL];
-    [self.detailViewController setTitle:feedsTitle];
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    [self.feedsViewController setFeedsUrl:feedsURL];
+    [self.feedsViewController setTitle:feedsTitle];
+    [self.navigationController pushViewController:self.feedsViewController animated:YES];
 }
 
 @end

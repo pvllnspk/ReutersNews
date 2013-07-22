@@ -65,18 +65,21 @@ typedef NS_ENUM(NSInteger, FeedTransition)
         
         if (data && !error)
         {
-             //extract images data
-            result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-            NSString *findImagesXpathQueryString = @"//div[@id='articleImage']";
-            NSArray *textNodes = [doc searchWithXPathQuery:findImagesXpathQueryString];
             
-            if([textNodes count]>0)
+            //extract images data
             {
-                TFHppleElement *element = [textNodes objectAtIndex:0];
-                TFHppleElement *childElement =[element firstChildWithTagName: @"img"];
-                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<img src='%@' border='0'/>",[childElement objectForKey:@"src"]]];
-                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
+                result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+                NSString *findImagesXpathQueryString = @"//div[@id='articleImage']";
+                NSArray *textNodes = [doc searchWithXPathQuery:findImagesXpathQueryString];
+                
+                if([textNodes count]>0)
+                {
+                    TFHppleElement *element = [textNodes objectAtIndex:0];
+                    TFHppleElement *childElement =[element firstChildWithTagName: @"img"];
+                    feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<img src='%@' border='0'/>",[childElement objectForKey:@"src"]]];
+                    feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
+                }
             }
         
             
@@ -185,10 +188,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
             UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
             if ([RNController isPad])
             {
-//                _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-//                [_popoverController presentPopoverFromRect:self.shareButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
                 [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
-            
             }
             else
             {

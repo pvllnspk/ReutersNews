@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MasterViewController.h"
+#import "CategoriesViewController.h"
 #import "AppConfig.h"
 
 
@@ -24,14 +24,14 @@
     
     if ([RNController isPad])
     {
-        MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPad" bundle:nil];
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:categoriesViewController];
         self.window.rootViewController = self.navigationController;
         
     } else
     {
-        MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPhone" bundle:nil];
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:categoriesViewController];
         self.window.rootViewController = self.navigationController;
         
     }

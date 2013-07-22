@@ -1,14 +1,14 @@
 //
-//  DetailViewTableViewCell.m
+//  FeedsTableViewCell.m
 //  ReutersNewsFeedsReader
 //
 //  Created by Barney on 7/15/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "DetailTableViewCell.h"
+#import "FeedsTableViewCell.h"
 
-@implementation DetailTableViewCell
+@implementation FeedsTableViewCell
 
 -(void)awakeFromNib
 {

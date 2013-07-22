@@ -1,16 +1,16 @@
 //
-//  DetailViewController.m
+//  FeedsViewController.m
 //  ReutersNewsFeedsReader
 //
 //  Created by Barney on 7/13/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "FeedsViewController.h"
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
 #import "WebViewController.h"
-#import "DetailTableViewCell.h"
+#import "FeedsTableViewCell.h"
 #import "MBProgressHUD.h"
 #import "RNActivityViewController.h"
 
@@ -21,13 +21,13 @@
 #define FPLog(x, ...)
 #endif
 
-@interface DetailViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, DetailTableViewCellDelegate, MWFeedParserDelegate>
+@interface FeedsViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, FeedsTableViewCellDelegate, MWFeedParserDelegate>
 
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (strong, nonatomic) UIPopoverController *categoriesPopoverController;
 
 @end
 
-@implementation DetailViewController
+@implementation FeedsViewController
 {
     MWFeedParser *_feedParser;
     NSMutableArray *_parsedItems;
@@ -45,10 +45,7 @@
 #pragma mark Set Feeds Url
 
 -(void) setFeedsUrl:(NSString *)feedsUrl
-{
-    
-    NSLog(@"setFeedsUrl  %@ ",feedsUrl);
-    
+{    
     _parsedItems = [[NSMutableArray alloc] init];
 	_itemsToDisplay = [NSArray array];
     
@@ -63,8 +60,8 @@
     _HUD.labelText = @"Loading...";
     [_HUD show:YES];
     
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
+    if (self.categoriesPopoverController != nil) {
+        [self.categoriesPopoverController dismissPopoverAnimated:YES];
     }
 }
 
@@ -89,11 +86,11 @@
     
     if([RNController isPad])
     {
-        [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"Cell"];
+        [self.tableView registerNib:[UINib nibWithNibName:@"FeedsTableViewCell_iPad" bundle:nil] forCellReuseIdentifier:@"Cell"];
     }
     else
     {
-        [self.tableView registerNib:[UINib nibWithNibName:@"DetailTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"Cell"];
+        [self.tableView registerNib:[UINib nibWithNibName:@"FeedsTableViewCell_iPhone" bundle:nil] forCellReuseIdentifier:@"Cell"];
     }
     
     _HUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -116,8 +113,8 @@
      _HUD.labelText = @"Refreshing...";
     [_HUD show:YES];
     
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
+    if (self.categoriesPopoverController != nil) {
+        [self.categoriesPopoverController dismissPopoverAnimated:YES];
     }
 }
 
@@ -211,12 +208,12 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    DetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    FeedsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [cell setDelegate:self];
     
     if (cell == nil)
     {
-        cell = [[DetailTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[FeedsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
         if (![RNController isPad])
         {
@@ -277,7 +274,7 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void)tableViewLongPressWithCell:(DetailTableViewCell *)cell
+-(void)tableViewLongPressWithCell:(FeedsTableViewCell *)cell
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     if (indexPath)
@@ -286,12 +283,7 @@
         UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
         if ([RNController isPad])
         {
-//            CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
-//            cellFrame.size.height = cell.frame.size.height/2;
-//            _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-//            [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown animated:YES];
             [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
-        
         }
         else
         {
