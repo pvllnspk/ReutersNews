@@ -20,9 +20,17 @@ typedef NS_ENUM(NSInteger, FeedTransition)
     FeedTransitionPrevious
 };
 
+typedef NS_ENUM(NSInteger, FontSizeChangeType)
+{
+    FontSizeChangeTypeIncrease,
+    FontSizeChangeTypeDecrease,
+    FontSizeChangeTypeNone
+};
+
 @interface WebViewController() <UIGestureRecognizerDelegate, UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
 - (IBAction)tabButtonPressed:(id)sender;
 
@@ -30,7 +38,10 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 
 @implementation WebViewController
 {
-     MWFeedItem *_currentFeed;
+    MWFeedItem *_currentFeed;
+    int _currentFontSize;
+    
+    UIPopoverController *_popoverController;
 }
 
 
@@ -84,6 +95,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
         
             
             //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
+            //TODO: TRY WITH REGULAR EXPRESSIONS
             {
                 for(int i=0;i<20;i++){
                     NSString *str = [result stringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
@@ -131,7 +143,16 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 {
     [_webView setDelegate:self];
     //set offset for the webview
-    [[_webView scrollView] setContentInset:UIEdgeInsetsMake(0, 0, 40, 0)];
+    [[_webView scrollView] setContentInset:[RNHelper isPad]?UIEdgeInsetsMake(40, 0, 0, 0):UIEdgeInsetsMake(0, 0, 40, 0)];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"fontsize"] == nil)
+    {
+        _currentFontSize = 100;
+    }
+    else
+    {
+        _currentFontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontsize"];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -161,6 +182,34 @@ typedef NS_ENUM(NSInteger, FeedTransition)
 
 
 #pragma mark -
+#pragma mark Fontsize Change
+
+- (IBAction)fontSizePinch:(id)sender
+{
+    UIPinchGestureRecognizer *pinch = sender;
+    if (pinch.state == UIGestureRecognizerStateRecognized)
+    {
+        [self changeFontSize:(pinch.scale > 1)?FontSizeChangeTypeIncrease:FontSizeChangeTypeDecrease];
+    }
+}
+
+- (void)changeFontSize:(FontSizeChangeType)changeType
+{
+    if (changeType == FontSizeChangeTypeIncrease && _currentFontSize == 160) return;
+    if (changeType == FontSizeChangeTypeDecrease && _currentFontSize == 50) return;
+    if (changeType != FontSizeChangeTypeNone)
+    {
+        _currentFontSize = (changeType == FontSizeChangeTypeIncrease) ? _currentFontSize + 5 : _currentFontSize - 5;
+        [[NSUserDefaults standardUserDefaults] setInteger:_currentFontSize forKey:@"fontsize"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",
+                          _currentFontSize];
+    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+}
+
+
+#pragma mark -
 #pragma mark User Interaction Callbacks
 
 - (IBAction)tabButtonPressed:(id)sender
@@ -169,7 +218,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
     switch (buttonTag) {
         case 0:
             
-            [self back];
+            [self back:nil];
             
             break;
         case 1:
@@ -188,7 +237,9 @@ typedef NS_ENUM(NSInteger, FeedTransition)
             UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
             if ([RNHelper isPad])
             {
-                [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+                _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+                [_popoverController presentPopoverFromRect:self.shareButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+
             }
             else
             {
@@ -199,7 +250,7 @@ typedef NS_ENUM(NSInteger, FeedTransition)
     }
 }
 
--(void)back
+-(IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }

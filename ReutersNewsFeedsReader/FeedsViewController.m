@@ -38,6 +38,8 @@
     UIRefreshControl *_refreshControl;
     
     MBProgressHUD *_HUD;
+    
+    UIPopoverController *_popoverController;
 }
 
 
@@ -283,7 +285,10 @@
         UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
         if ([RNHelper isPad])
         {
-            [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+            CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
+            cellFrame.size.height = cell.frame.size.height/2;
+            _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+            [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown animated:YES];
         }
         else
         {
