@@ -1,6 +1,6 @@
 About
 ======================
-A [work-in-progress] Reuters News client for iPhone and iPad based on RSS
+A [work-in-progress] [Reuters News](http://www.reuters.com/) client for iPhone and iPad based on RSS
 
 Dependences
 ======================
