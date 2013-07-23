@@ -1,13 +1,7 @@
-ReutersNewsFeedsReader
-======================
-Reuters News Reader based on RSS for iPhone and iPad
-
-
 About
 ======================
-A [work-in-progress] Reuters News client for iPhone and iPad
+A [work-in-progress] Reuters News client for iPhone and iPad based on RSS
 
 
-3rd Party Libraries
+Dependences
 ======================
-
