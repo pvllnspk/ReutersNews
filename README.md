@@ -2,7 +2,7 @@ About
 ======================
 A [work-in-progress] [Reuters News](http://www.reuters.com/) client for iPhone and iPad based on RSS
 
-Dependences
+Dependencies
 ======================
 - [MWFeedParser](https://github.com/mwaterfall/MWFeedParser)
 - [hpple](https://github.com/topfunky/hpple)
