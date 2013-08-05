@@ -1,6 +1,6 @@
 //
 //  RNActivityViewController.m
-//  ReutersNewsFeedsReader
+//  ReutersNewsReader
 //
 //  Created by Barney on 7/21/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.

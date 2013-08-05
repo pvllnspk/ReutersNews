@@ -1,6 +1,6 @@
 //
 //  RNController.h
-//  ReutersNewsFeedsReader
+//  ReutersNewsReader
 //
 //  Created by Barney on 7/15/13.
 //  Copyright (c) 2013 pvllnspk. All rights reserved.

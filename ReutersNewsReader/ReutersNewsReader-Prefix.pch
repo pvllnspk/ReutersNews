@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'ReutersNewsFeedsReader' target in the 'ReutersNewsFeedsReader' project
+// Prefix header for all source files of the 'ReutersNewsReader' target in the 'ReutersNewsReader' project
 //
 
 #import <Availability.h>
