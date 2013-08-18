@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3C1ADB017C103130066A564 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADA917C103130066A564 /* NSString+Additions.m */; };
+		B3C1ADB117C103130066A564 /* RNActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADAB17C103130066A564 /* RNActivityViewController.m */; };
+		B3C1ADB217C103130066A564 /* RNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADAD17C103130066A564 /* RNHelper.m */; };
+		B3C1ADB317C103130066A564 /* RNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADAF17C103130066A564 /* RNNavigationController.m */; };
+		B3C1ADB717C11B870066A564 /* EdgeInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADB617C11B870066A564 /* EdgeInsetsLabel.m */; };
+		B3C1ADC317C11E510066A564 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1ADC217C11E510066A564 /* NSDate-Utilities.m */; };
 		B3E0FA6E17914DEE00BD4CC4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA6D17914DEE00BD4CC4 /* UIKit.framework */; };
 		B3E0FA7017914DEE00BD4CC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA6F17914DEE00BD4CC4 /* Foundation.framework */; };
 		B3E0FA7217914DEE00BD4CC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA7117914DEE00BD4CC4 /* CoreGraphics.framework */; };
@@ -25,10 +31,6 @@
 		B3E5B2A617B027E2009FC97B /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2A517B027E2009FC97B /* WebViewController.m */; };
 		B3E5B2AB17B027F3009FC97B /* WebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B2A717B027F3009FC97B /* WebViewController_iPad.xib */; };
 		B3E5B2AC17B027F3009FC97B /* WebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E5B2A917B027F3009FC97B /* WebViewController_iPhone.xib */; };
-		B3E5B2B517B0281C009FC97B /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2AE17B0281C009FC97B /* NSString+Additions.m */; };
-		B3E5B2B617B0281C009FC97B /* RNActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2B017B0281C009FC97B /* RNActivityViewController.m */; };
-		B3E5B2B717B0281C009FC97B /* RNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2B217B0281C009FC97B /* RNHelper.m */; };
-		B3E5B2B817B0281C009FC97B /* RNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2B417B0281C009FC97B /* RNNavigationController.m */; };
 		B3E5B2E117B02859009FC97B /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2BC17B02859009FC97B /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3E5B2E217B02859009FC97B /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2BF17B02859009FC97B /* TFHpple.m */; };
 		B3E5B2E317B02859009FC97B /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E5B2C117B02859009FC97B /* TFHppleElement.m */; };
@@ -73,6 +75,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3C1ADA817C103130066A564 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		B3C1ADA917C103130066A564 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		B3C1ADAA17C103130066A564 /* RNActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityViewController.h; sourceTree = "<group>"; };
+		B3C1ADAB17C103130066A564 /* RNActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityViewController.m; sourceTree = "<group>"; };
+		B3C1ADAC17C103130066A564 /* RNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHelper.h; sourceTree = "<group>"; };
+		B3C1ADAD17C103130066A564 /* RNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHelper.m; sourceTree = "<group>"; };
+		B3C1ADAE17C103130066A564 /* RNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNavigationController.h; sourceTree = "<group>"; };
+		B3C1ADAF17C103130066A564 /* RNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNavigationController.m; sourceTree = "<group>"; };
+		B3C1ADB517C11B870066A564 /* EdgeInsetsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EdgeInsetsLabel.h; path = ReutersNewsReader/Views/EdgeInsetsLabel.h; sourceTree = SOURCE_ROOT; };
+		B3C1ADB617C11B870066A564 /* EdgeInsetsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EdgeInsetsLabel.m; path = ReutersNewsReader/Views/EdgeInsetsLabel.m; sourceTree = SOURCE_ROOT; };
+		B3C1ADC117C11E510066A564 /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
+		B3C1ADC217C11E510066A564 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
 		B3E0FA6A17914DEE00BD4CC4 /* ReutersNewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReutersNewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E0FA6D17914DEE00BD4CC4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3E0FA6F17914DEE00BD4CC4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,14 +112,6 @@
 		B3E5B2A517B027E2009FC97B /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = "ReutersNewsReader/View Controllers/WebViewController.m"; sourceTree = SOURCE_ROOT; };
 		B3E5B2A817B027F3009FC97B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ReutersNewsReader/en.lproj/WebViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
 		B3E5B2AA17B027F3009FC97B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = ReutersNewsReader/en.lproj/WebViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
-		B3E5B2AD17B0281C009FC97B /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "ReutersNewsReader/Misc/NSString+Additions.h"; sourceTree = SOURCE_ROOT; };
-		B3E5B2AE17B0281C009FC97B /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "ReutersNewsReader/Misc/NSString+Additions.m"; sourceTree = SOURCE_ROOT; };
-		B3E5B2AF17B0281C009FC97B /* RNActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNActivityViewController.h; path = ReutersNewsReader/Misc/RNActivityViewController.h; sourceTree = SOURCE_ROOT; };
-		B3E5B2B017B0281C009FC97B /* RNActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNActivityViewController.m; path = ReutersNewsReader/Misc/RNActivityViewController.m; sourceTree = SOURCE_ROOT; };
-		B3E5B2B117B0281C009FC97B /* RNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNHelper.h; path = ReutersNewsReader/Misc/RNHelper.h; sourceTree = SOURCE_ROOT; };
-		B3E5B2B217B0281C009FC97B /* RNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNHelper.m; path = ReutersNewsReader/Misc/RNHelper.m; sourceTree = SOURCE_ROOT; };
-		B3E5B2B317B0281C009FC97B /* RNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNNavigationController.h; path = ReutersNewsReader/Misc/RNNavigationController.h; sourceTree = SOURCE_ROOT; };
-		B3E5B2B417B0281C009FC97B /* RNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNNavigationController.m; path = ReutersNewsReader/Misc/RNNavigationController.m; sourceTree = SOURCE_ROOT; };
 		B3E5B2BB17B02859009FC97B /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		B3E5B2BC17B02859009FC97B /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		B3E5B2BE17B02859009FC97B /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -189,21 +195,6 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		B343B189179D54B500FDED34 /* Misc */ = {
-			isa = PBXGroup;
-			children = (
-				B3E5B2AD17B0281C009FC97B /* NSString+Additions.h */,
-				B3E5B2AE17B0281C009FC97B /* NSString+Additions.m */,
-				B3E5B2AF17B0281C009FC97B /* RNActivityViewController.h */,
-				B3E5B2B017B0281C009FC97B /* RNActivityViewController.m */,
-				B3E5B2B117B0281C009FC97B /* RNHelper.h */,
-				B3E5B2B217B0281C009FC97B /* RNHelper.m */,
-				B3E5B2B317B0281C009FC97B /* RNNavigationController.h */,
-				B3E5B2B417B0281C009FC97B /* RNNavigationController.m */,
-			);
-			name = Misc;
-			sourceTree = "<group>";
-		};
 		B343B18A179D564400FDED34 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +232,40 @@
 			name = Webview;
 			sourceTree = "<group>";
 		};
+		B3C1ADA717C103130066A564 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3C1ADA817C103130066A564 /* NSString+Additions.h */,
+				B3C1ADA917C103130066A564 /* NSString+Additions.m */,
+				B3C1ADAA17C103130066A564 /* RNActivityViewController.h */,
+				B3C1ADAB17C103130066A564 /* RNActivityViewController.m */,
+				B3C1ADAC17C103130066A564 /* RNHelper.h */,
+				B3C1ADAD17C103130066A564 /* RNHelper.m */,
+				B3C1ADAE17C103130066A564 /* RNNavigationController.h */,
+				B3C1ADAF17C103130066A564 /* RNNavigationController.m */,
+			);
+			name = Helpers;
+			path = ReutersNewsReader/Helpers;
+			sourceTree = SOURCE_ROOT;
+		};
+		B3C1ADB417C11B440066A564 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3C1ADB517C11B870066A564 /* EdgeInsetsLabel.h */,
+				B3C1ADB617C11B870066A564 /* EdgeInsetsLabel.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B3C1ADC017C11E510066A564 /* NSDate-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3C1ADC117C11E510066A564 /* NSDate-Utilities.h */,
+				B3C1ADC217C11E510066A564 /* NSDate-Utilities.m */,
+			);
+			path = "NSDate-Extensions";
+			sourceTree = "<group>";
+		};
 		B3E0FA6117914DEE00BD4CC4 = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +300,8 @@
 			children = (
 				B3E5B28417B0275B009FC97B /* Application */,
 				B343B188179D538900FDED34 /* View Controllers */,
-				B343B189179D54B500FDED34 /* Misc */,
+				B3C1ADB417C11B440066A564 /* Views */,
+				B3C1ADA717C103130066A564 /* Helpers */,
 				B3E5B2B917B02859009FC97B /* Vendor */,
 				B3E0FA7417914DEE00BD4CC4 /* Supporting Files */,
 			);
@@ -310,6 +336,7 @@
 		B3E5B2B917B02859009FC97B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B3C1ADC017C11E510066A564 /* NSDate-Extensions */,
 				B3E5B2BA17B02859009FC97B /* Google Toolbox for Mac */,
 				B3E5B2BD17B02859009FC97B /* Hpple */,
 				B3E5B2C417B02859009FC97B /* MBProgressHUD */,
@@ -539,10 +566,6 @@
 				B3E5B29617B027BE009FC97B /* FeedsTableViewCell.m in Sources */,
 				B3E5B29717B027BE009FC97B /* FeedsViewController.m in Sources */,
 				B3E5B2A617B027E2009FC97B /* WebViewController.m in Sources */,
-				B3E5B2B517B0281C009FC97B /* NSString+Additions.m in Sources */,
-				B3E5B2B617B0281C009FC97B /* RNActivityViewController.m in Sources */,
-				B3E5B2B717B0281C009FC97B /* RNHelper.m in Sources */,
-				B3E5B2B817B0281C009FC97B /* RNNavigationController.m in Sources */,
 				B3E5B2E117B02859009FC97B /* GTMNSString+HTML.m in Sources */,
 				B3E5B2E217B02859009FC97B /* TFHpple.m in Sources */,
 				B3E5B2E317B02859009FC97B /* TFHppleElement.m in Sources */,
@@ -556,6 +579,12 @@
 				B3E5B2EF17B02859009FC97B /* ReadabilityActivity.m in Sources */,
 				B3E5B2F417B02859009FC97B /* TUSafariActivity.m in Sources */,
 				B3E5B32117B028DD009FC97B /* main.m in Sources */,
+				B3C1ADB017C103130066A564 /* NSString+Additions.m in Sources */,
+				B3C1ADB117C103130066A564 /* RNActivityViewController.m in Sources */,
+				B3C1ADB217C103130066A564 /* RNHelper.m in Sources */,
+				B3C1ADB317C103130066A564 /* RNNavigationController.m in Sources */,
+				B3C1ADB717C11B870066A564 /* EdgeInsetsLabel.m in Sources */,
+				B3C1ADC317C11E510066A564 /* NSDate-Utilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

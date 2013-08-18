@@ -13,6 +13,7 @@
 #import "FeedsTableViewCell.h"
 #import "MBProgressHUD.h"
 #import "RNActivityViewController.h"
+#import "NSDate-Utilities.h"
 
 // Feed Parser Logging
 #if 0 // Set to 1 to enable Feed Parser Logging
@@ -215,7 +216,7 @@
     
     if (cell == nil)
     {
-        cell = [[FeedsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[FeedsTableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
         
         if (![RNHelper isPad])
         {
@@ -241,14 +242,17 @@
            [subtitle appendString:itemSummary];
             cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
             cell.secondLevelText.text = subtitle;
-            cell.thirdLevelText.text = [_formatter stringFromDate:item.date];
+            cell.thirdLevelText.text = [self getUserFriendlyDate:item.date];
         }
         else
         {
             cell.secondLevelText.font = [UIFont boldSystemFontOfSize:14];
-            cell.secondLevelText.text = [_formatter stringFromDate:item.date];
+            cell.secondLevelText.text = [self getUserFriendlyDate:item.date];
         }		
 	}
+    
+   
+   cell.autoresizesSubviews = YES; 
     return cell;
 }
 
@@ -294,6 +298,26 @@
         {
             [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
         }
+    }
+}
+
+- (NSString*)getUserFriendlyDate:(NSDate *)date
+{
+    if([date isToday]){
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"hh:mm a"];
+        
+        return [formatter stringFromDate:[NSDate date]];
+        
+    }else if([date isYesterday]){
+        
+        return @"Yesterday";
+        
+    }else{
+        return [NSDateFormatter localizedStringFromDate:date
+                                              dateStyle:NSDateFormatterShortStyle
+                                              timeStyle:NSDateFormatterNoStyle];
     }
 }
 

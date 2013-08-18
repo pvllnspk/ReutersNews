@@ -16,6 +16,9 @@
     [longPress setMinimumPressDuration:0.6];
     [longPress setDelegate:self];
     [self.contentView addGestureRecognizer:longPress];
+    
+    [self setAutoresizesSubviews:YES];
+    [self setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
 }
 
 -(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer

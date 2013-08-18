@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EdgeInsetsLabel.h"
 
 @class FeedsTableViewCell;
 
@@ -20,8 +21,8 @@
 
 @property (weak, nonatomic) id<FeedsTableViewCellDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UILabel *firstLevelText;
-@property (weak, nonatomic) IBOutlet UILabel *secondLevelText;
-@property (weak, nonatomic) IBOutlet UILabel *thirdLevelText;
+@property (weak, nonatomic) IBOutlet EdgeInsetsLabel *firstLevelText;
+@property (weak, nonatomic) IBOutlet EdgeInsetsLabel *secondLevelText;
+@property (weak, nonatomic) IBOutlet EdgeInsetsLabel *thirdLevelText;
 
 @end
