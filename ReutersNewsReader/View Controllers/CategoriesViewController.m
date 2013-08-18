@@ -14,7 +14,6 @@
     NSDictionary *_feedsCategories;
 }
 
-
 #pragma mark -
 #pragma mark View Lifecycle
 

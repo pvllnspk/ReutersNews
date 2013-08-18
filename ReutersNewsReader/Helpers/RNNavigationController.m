@@ -11,10 +11,6 @@
 
 //thanks https://github.com/mmackh/Hacker-News-for-iOS/blob/cc6d03864a8ac75a8f712d69b5f8354b5813455d/Hacker%20News/MAMSlideNavigationViewController.m
 
-@interface RNNavigationController ()
-
-@end
-
 @implementation RNNavigationController
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -59,7 +55,7 @@
     [super pushViewController:viewController animated:NO];
 }
 
--(UIViewController *)popViewControllerAnimated:(BOOL)animated
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
     if(animated)
     {

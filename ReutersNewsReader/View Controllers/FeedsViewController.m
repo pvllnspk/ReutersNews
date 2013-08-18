@@ -15,7 +15,6 @@
 #import "RNActivityViewController.h"
 #import "NSDate-Utilities.h"
 
-// Feed Parser Logging
 #if 0 // Set to 1 to enable Feed Parser Logging
 #define FPLog(x, ...) NSLog(x, ## __VA_ARGS__);
 #else

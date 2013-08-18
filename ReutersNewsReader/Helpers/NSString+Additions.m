@@ -9,9 +9,7 @@
 #import "NSString+Additions.h"
 #import <CommonCrypto/CommonDigest.h>
 
-
 @implementation NSString (Additions)
-
 
 -(NSString*)sha1
 {

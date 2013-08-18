@@ -12,7 +12,7 @@
 
 @implementation RNActivityViewController
 
-+(UIActivityViewController *)controllerForURL:(NSURL *)URL
++ (UIActivityViewController *)controllerForURL:(NSURL *)URL
 {
     NSMutableArray *activities = [[NSMutableArray alloc]init];
     TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];

@@ -14,13 +14,13 @@
 #import "RNActivityViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-typedef NS_ENUM(NSInteger, FeedTransition)
+typedef NS_ENUM (NSInteger, FeedTransition)
 {
     FeedTransitionNext,
     FeedTransitionPrevious
 };
 
-typedef NS_ENUM(NSInteger, FontSizeChangeType)
+typedef NS_ENUM (NSInteger, FontSizeChangeType)
 {
     FontSizeChangeTypeIncrease,
     FontSizeChangeTypeDecrease,
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType)
                     feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
                 }
             }
-        
+            
             
             //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
             //TODO: TRY WITH REGULAR EXPRESSIONS
@@ -142,7 +142,6 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType)
 -(void)viewDidLoad
 {
     [_webView setDelegate:self];
-    //set offset for the webview
     [[_webView scrollView] setContentInset:[RNHelper isPad]?UIEdgeInsetsMake(40, 0, 0, 0):UIEdgeInsetsMake(0, 0, 40, 0)];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"fontsize"] == nil)
@@ -239,7 +238,7 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType)
             {
                 _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
                 [_popoverController presentPopoverFromRect:self.shareButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-
+                
             }
             else
             {
@@ -274,7 +273,6 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType)
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [[self.webView layer] addAnimation:animation forKey:nil];
     
-    
     switch (transitionType) {
         case FeedTransitionNext:
             
@@ -290,7 +288,6 @@ typedef NS_ENUM(NSInteger, FontSizeChangeType)
             break;
     }
 }
-
 
 #pragma mark -
 #pragma mark Utility Methods
