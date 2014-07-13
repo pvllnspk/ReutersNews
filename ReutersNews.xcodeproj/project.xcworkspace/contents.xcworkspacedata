@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ReutersNewsReader.xcodeproj">
+      location = "self:ReutersNews.xcodeproj">
    </FileRef>
 </Workspace>
