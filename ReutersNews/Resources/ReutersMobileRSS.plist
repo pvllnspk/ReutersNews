@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keys</key>
+	<array>
+		<string>Top News</string>
+		<string>Oddly Enough</string>
+		<string>Sports</string>
+		<string>Entertainment</string>
+		<string>Business</string>
+		<string>Investing</string>
+		<string>Technology</string>
+		<string>Internet</string>
+		<string>US News</string>
+		<string>Science</string>
+		<string>World</string>
+		<string>Politics</string>
+		<string>Health</string>
+	</array>
+	<key>values</key>
+	<array>
+		<string>http://mobile.reuters.com/reuters/rss/TOP.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/ODD.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/SPO.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/ENT.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/BUS.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/INV.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/TECH.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/INT.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/USN.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/SCI.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/WOR.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/POL.xml</string>
+		<string>http://mobile.reuters.com/reuters/rss/HLT.xml</string>
+	</array>
+</dict>
+</plist>

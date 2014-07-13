@@ -7,50 +7,57 @@
 //
 
 #import "AppDelegate.h"
-#import "CategoriesViewController.h"
-#import "AppConfig.h"
-#import "RNNavigationController.h"
-
+#import "JSSlidingViewController.h"
+#import "SectionsViewController.h"
+#import "NavigationController.h"
 
 @implementation AppDelegate
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    int cacheSizeMemory = 10*1024*1024;
-    int cacheSizeDisk = 100*1024*1024;
-    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:cacheSizeMemory diskCapacity:cacheSizeDisk diskPath:@"rnfrcache"];
+    JSSlidingViewController *slidingViewController;
+}
+
+
++ (AppDelegate *)appDelegate {
+    
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    
+    NSURLCache *sharedCache = [[NSURLCache alloc] initWithMemoryCapacity:CACHE_SIZE_MEMORY diskCapacity:CACHE_SIZE_DISK diskPath:@"rncache"];
     [NSURLCache setSharedURLCache:sharedCache];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard;
     
-    if ([RNHelper isPad])
-    {
-        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPad" bundle:nil];
-        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
-        self.window.rootViewController = self.navigationController;
+    if (IS_IPAD()){
         
-    } else
-    {
-        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPhone" bundle:nil];
-        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
-        self.window.rootViewController = self.navigationController;
+        //        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPad" bundle:nil];
+        //        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
+        //        self.window.rootViewController = self.navigationController;
+        
+    } else{
+        
+        
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
+        SectionsViewController *sectionViewController = [storyboard instantiateViewControllerWithIdentifier:@"Sections"];
+        NavigationController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
+        slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:navViewController backViewController:sectionViewController];
+        self.window.rootViewController = slidingViewController;
         
     }
     
     [self.window makeKeyAndVisible];
     
-    //change the navigation bar color
-    UINavigationBar *bar = [self.navigationController navigationBar];
-    [bar setTintColor:[UIColor colorWithRed:25.0f/255.0f green:25.0f/255.0f blue:25.0f/255.0f alpha:1.0f]];
     
     return YES;
 }
 
--(void)applicationDidReceiveMemoryWarning:(UIApplication *)application
-{
+
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+    
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
-
-
 
 @end
