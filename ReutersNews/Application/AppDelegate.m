@@ -11,6 +11,9 @@
 #import "NewsViewController.h"
 
 @implementation AppDelegate
+{
+     JSSlidingViewController *slidingViewController;
+}
 
 + (AppDelegate *)appDelegate {
     
@@ -38,9 +41,9 @@
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
         MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
         NewsViewController *newsViewController = [storyboard instantiateViewControllerWithIdentifier:@"News"];
-        _slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:newsViewController backViewController:menuViewController];
-        menuViewController.slidingViewController = _slidingViewController;
-        self.window.rootViewController = _slidingViewController;
+        slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:newsViewController backViewController:menuViewController];
+        menuViewController.slidingViewController = slidingViewController;
+        self.window.rootViewController = slidingViewController;
         
     }
     
