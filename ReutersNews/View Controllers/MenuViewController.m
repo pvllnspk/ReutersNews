@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 pvllnspk. All rights reserved.
 //
 
-#import "SectionsViewController.h"
+#import "MenuViewController.h"
+#import "AppDelegate.h"
+#import "NewsViewController.h"
 
-@implementation SectionsViewController
+@implementation MenuViewController
 {
     NSArray* newsSectionsKeys, *newsSectionsValues;
 }
@@ -18,7 +20,7 @@
     
     self = [super initWithStyle:style];
     if (self) {
-        self.title = NSLocalizedString(@"Select a section", @"Select a section");
+        self.title = @"Select a section";
     }
     return self;
 }
@@ -27,7 +29,7 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-
+    
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersMobileRSS" ofType:@"plist"];
     newsSectionsKeys = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"keys"];
     newsSectionsValues = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"values"];
@@ -53,21 +55,36 @@
     if (cell == nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-     cell.textLabel.text = [newsSectionsKeys objectAtIndex:indexPath.row];
+    cell.textLabel.text = [newsSectionsKeys objectAtIndex:indexPath.row];
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-     [newsSectionsValues objectAtIndex:indexPath.row];
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSString *feedTitle = [newsSectionsKeys objectAtIndex:indexPath.row];
+    NSString *feedURL = [newsSectionsValues objectAtIndex:indexPath.row];
+    
+    
+        NSLog(@"didSelectRowAtIndexPath %@ ",feedTitle);
+    
+     NSLog(@"viewControllers][0] %@ ",(NewsViewController*)[_slidingViewController backViewController]);
+    NSLog(@"viewControllers][1] %@ ",(NewsViewController*)[_slidingViewController frontViewController]);
+    
+    [[_slidingViewController backViewController] setTitle:feedTitle];
+    [((NewsViewController*)[_slidingViewController frontViewController]) setFeedURL:feedURL];
+    [self toggleSlider];
 }
+
+
+- (void)toggleSlider {
+    
+    if ([_slidingViewController isOpen]) {
+        [_slidingViewController closeSlider:YES completion:nil];
+    } else {
+        [_slidingViewController openSlider:YES completion:nil];
+    }
+}
+
 
 @end

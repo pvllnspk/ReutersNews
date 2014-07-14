@@ -7,15 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "JSSlidingViewController.h"
-#import "SectionsViewController.h"
-#import "NavigationController.h"
+#import "MenuViewController.h"
+#import "NewsViewController.h"
 
 @implementation AppDelegate
-{
-    JSSlidingViewController *slidingViewController;
-}
-
 
 + (AppDelegate *)appDelegate {
     
@@ -41,10 +36,11 @@
         
         
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
-        SectionsViewController *sectionViewController = [storyboard instantiateViewControllerWithIdentifier:@"Sections"];
-        NavigationController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
-        slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:navViewController backViewController:sectionViewController];
-        self.window.rootViewController = slidingViewController;
+        MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+        NewsViewController *newsViewController = [storyboard instantiateViewControllerWithIdentifier:@"News"];
+        _slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:newsViewController backViewController:menuViewController];
+        menuViewController.slidingViewController = _slidingViewController;
+        self.window.rootViewController = _slidingViewController;
         
     }
     

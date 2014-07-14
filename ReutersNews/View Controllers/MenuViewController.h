@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSSlidingViewController.h"
 
-@interface SectionsViewController : UITableViewController
+@interface MenuViewController : UITableViewController
+
+@property (strong, nonatomic) JSSlidingViewController *slidingViewController;
 
 @end

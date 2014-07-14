@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class WebViewController;
+
 @interface NewsViewController : UITableViewController
+
+@property (strong, nonatomic) WebViewController *webViewController;
+@property (strong, nonatomic, setter = setFeedURL:) NSString *feedURL;
 
 @end

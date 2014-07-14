@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B321E48B1972A3590008EC02 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4801972A3590008EC02 /* CategoriesViewController.m */; };
-		B321E48C1972A3590008EC02 /* FeedsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4821972A3590008EC02 /* FeedsTableViewCell.m */; };
-		B321E48D1972A3590008EC02 /* FeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4841972A3590008EC02 /* FeedsViewController.m */; };
 		B321E48E1972A3590008EC02 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4861972A3590008EC02 /* WebViewController.m */; };
 		B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4891972A3590008EC02 /* EdgeInsetsLabel.m */; };
 		B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4921972A36A0008EC02 /* NSString+Additions.m */; };
@@ -64,7 +61,7 @@
 		B321E5271972DE940008EC02 /* Storyboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321E5261972DE940008EC02 /* Storyboard_phone.storyboard */; };
 		B321E5291972DEB10008EC02 /* Storyboard_pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321E5281972DEB00008EC02 /* Storyboard_pad.storyboard */; };
 		B321E52B1972E23B0008EC02 /* ReutersMobileRSS.plist in Resources */ = {isa = PBXBuildFile; fileRef = B321E52A1972E23B0008EC02 /* ReutersMobileRSS.plist */; };
-		B321E5311972E44A0008EC02 /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E5301972E4490008EC02 /* SectionsViewController.m */; };
+		B321E5311972E44A0008EC02 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E5301972E4490008EC02 /* MenuViewController.m */; };
 		B321E5371972EC160008EC02 /* frontViewControllerDropShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = B321E5331972EC160008EC02 /* frontViewControllerDropShadow.png */; };
 		B321E5381972EC160008EC02 /* frontViewControllerDropShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B321E5341972EC160008EC02 /* frontViewControllerDropShadow@2x.png */; };
 		B321E5391972EC160008EC02 /* JSSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E5361972EC160008EC02 /* JSSlidingViewController.m */; };
@@ -78,12 +75,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B321E47F1972A3590008EC02 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		B321E4801972A3590008EC02 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
-		B321E4811972A3590008EC02 /* FeedsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsTableViewCell.h; sourceTree = "<group>"; };
-		B321E4821972A3590008EC02 /* FeedsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsTableViewCell.m; sourceTree = "<group>"; };
-		B321E4831972A3590008EC02 /* FeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedsViewController.h; sourceTree = "<group>"; };
-		B321E4841972A3590008EC02 /* FeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedsViewController.m; sourceTree = "<group>"; };
 		B321E4851972A3590008EC02 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		B321E4861972A3590008EC02 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		B321E4881972A3590008EC02 /* EdgeInsetsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeInsetsLabel.h; sourceTree = "<group>"; };
@@ -160,8 +151,8 @@
 		B321E5261972DE940008EC02 /* Storyboard_phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_phone.storyboard; sourceTree = "<group>"; };
 		B321E5281972DEB00008EC02 /* Storyboard_pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_pad.storyboard; sourceTree = "<group>"; };
 		B321E52A1972E23B0008EC02 /* ReutersMobileRSS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReutersMobileRSS.plist; path = ReutersNews/Resources/ReutersMobileRSS.plist; sourceTree = SOURCE_ROOT; };
-		B321E52F1972E4490008EC02 /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
-		B321E5301972E4490008EC02 /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
+		B321E52F1972E4490008EC02 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		B321E5301972E4490008EC02 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		B321E5331972EC160008EC02 /* frontViewControllerDropShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontViewControllerDropShadow.png; sourceTree = "<group>"; };
 		B321E5341972EC160008EC02 /* frontViewControllerDropShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frontViewControllerDropShadow@2x.png"; sourceTree = "<group>"; };
 		B321E5351972EC160008EC02 /* JSSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSlidingViewController.h; sourceTree = "<group>"; };
@@ -211,18 +202,12 @@
 		B321E47E1972A3590008EC02 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B321E52F1972E4490008EC02 /* MenuViewController.h */,
+				B321E5301972E4490008EC02 /* MenuViewController.m */,
 				B321E53D1972FAB90008EC02 /* NavigationController.h */,
 				B321E53E1972FABA0008EC02 /* NavigationController.m */,
-				B321E52F1972E4490008EC02 /* SectionsViewController.h */,
-				B321E5301972E4490008EC02 /* SectionsViewController.m */,
 				B321E53A1972F2B40008EC02 /* NewsViewController.h */,
 				B321E53B1972F2B50008EC02 /* NewsViewController.m */,
-				B321E47F1972A3590008EC02 /* CategoriesViewController.h */,
-				B321E4801972A3590008EC02 /* CategoriesViewController.m */,
-				B321E4811972A3590008EC02 /* FeedsTableViewCell.h */,
-				B321E4821972A3590008EC02 /* FeedsTableViewCell.m */,
-				B321E4831972A3590008EC02 /* FeedsViewController.h */,
-				B321E4841972A3590008EC02 /* FeedsViewController.m */,
 				B321E4851972A3590008EC02 /* WebViewController.h */,
 				B321E4861972A3590008EC02 /* WebViewController.m */,
 				B321E5101972A39F0008EC02 /* WebViewController_iPad.xib */,
@@ -563,9 +548,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B321E48B1972A3590008EC02 /* CategoriesViewController.m in Sources */,
-				B321E48C1972A3590008EC02 /* FeedsTableViewCell.m in Sources */,
-				B321E48D1972A3590008EC02 /* FeedsViewController.m in Sources */,
 				B321E48E1972A3590008EC02 /* WebViewController.m in Sources */,
 				B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */,
 				B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */,
@@ -587,7 +569,7 @@
 				B321E4DC1972A36A0008EC02 /* TUSafariActivity.m in Sources */,
 				B321E4F51972A3900008EC02 /* main.m in Sources */,
 				B321E5211972DDEE0008EC02 /* AppDelegate.m in Sources */,
-				B321E5311972E44A0008EC02 /* SectionsViewController.m in Sources */,
+				B321E5311972E44A0008EC02 /* MenuViewController.m in Sources */,
 				B321E5391972EC160008EC02 /* JSSlidingViewController.m in Sources */,
 				B321E53C1972F2B50008EC02 /* NewsViewController.m in Sources */,
 				B321E53F1972FABB0008EC02 /* NavigationController.m in Sources */,
