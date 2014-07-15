@@ -54,8 +54,6 @@
 		B321E5061972A3900008EC02 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B321E4F11972A3900008EC02 /* share@2x.png */; };
 		B321E5071972A3900008EC02 /* ReutersNews-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B321E4F21972A3900008EC02 /* ReutersNews-Info.plist */; };
 		B321E5081972A3900008EC02 /* ReutersNewsRSSFeeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = B321E4F41972A3900008EC02 /* ReutersNewsRSSFeeds.plist */; };
-		B321E5191972A39F0008EC02 /* WebViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B321E5101972A39F0008EC02 /* WebViewController_iPad.xib */; };
-		B321E51A1972A39F0008EC02 /* WebViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B321E5111972A39F0008EC02 /* WebViewController_iPhone.xib */; };
 		B321E51D1972D9F10008EC02 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B321E51C1972D9F10008EC02 /* InfoPlist.strings */; };
 		B321E5211972DDEE0008EC02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E5201972DDEE0008EC02 /* AppDelegate.m */; };
 		B321E5271972DE940008EC02 /* Storyboard_phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B321E5261972DE940008EC02 /* Storyboard_phone.storyboard */; };
@@ -72,6 +70,8 @@
 		B3E0FA7217914DEE00BD4CC4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FA7117914DEE00BD4CC4 /* CoreGraphics.framework */; };
 		B3E0FACB17914E7200BD4CC4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FACA17914E7200BD4CC4 /* QuartzCore.framework */; };
 		B3E0FACD17914E8500BD4CC4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0FACC17914E8500BD4CC4 /* libxml2.dylib */; };
+		B3E801321975C0C4009611BD /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E8012E1975C0C4009611BD /* HTMLNode.m */; };
+		B3E801331975C0C4009611BD /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E801301975C0C4009611BD /* HTMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,8 +143,6 @@
 		B321E4F21972A3900008EC02 /* ReutersNews-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ReutersNews-Info.plist"; path = "ReutersNews/ReutersNews-Info.plist"; sourceTree = SOURCE_ROOT; };
 		B321E4F31972A3900008EC02 /* ReutersNews-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ReutersNews-Prefix.pch"; path = "ReutersNews/ReutersNews-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		B321E4F41972A3900008EC02 /* ReutersNewsRSSFeeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ReutersNewsRSSFeeds.plist; path = ReutersNews/ReutersNewsRSSFeeds.plist; sourceTree = SOURCE_ROOT; };
-		B321E5101972A39F0008EC02 /* WebViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController_iPad.xib; sourceTree = "<group>"; };
-		B321E5111972A39F0008EC02 /* WebViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController_iPhone.xib; sourceTree = "<group>"; };
 		B321E51C1972D9F10008EC02 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ReutersNews/Resources/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		B321E51F1972DDEE0008EC02 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B321E5201972DDEE0008EC02 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -168,6 +166,10 @@
 		B3E0FA7117914DEE00BD4CC4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3E0FACA17914E7200BD4CC4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3E0FACC17914E8500BD4CC4 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B3E8012D1975C0C4009611BD /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		B3E8012E1975C0C4009611BD /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		B3E8012F1975C0C4009611BD /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		B3E801301975C0C4009611BD /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,8 +212,6 @@
 				B321E53B1972F2B50008EC02 /* NewsViewController.m */,
 				B321E4851972A3590008EC02 /* WebViewController.h */,
 				B321E4861972A3590008EC02 /* WebViewController.m */,
-				B321E5101972A39F0008EC02 /* WebViewController_iPad.xib */,
-				B321E5111972A39F0008EC02 /* WebViewController_iPhone.xib */,
 			);
 			name = "View Controllers";
 			path = "ReutersNews/View Controllers";
@@ -246,6 +246,7 @@
 		B321E4991972A36A0008EC02 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B3E8012C1975C0C4009611BD /* Objective-C-HMTL-Parser */,
 				B321E5321972EC160008EC02 /* JSSlidingViewController */,
 				B321E49A1972A36A0008EC02 /* Google Toolbox for Mac */,
 				B321E49D1972A36A0008EC02 /* Hpple */,
@@ -356,8 +357,8 @@
 		B321E4DF1972A3900008EC02 /* Html */ = {
 			isa = PBXGroup;
 			children = (
-				B321E4E01972A3900008EC02 /* view_pad.html */,
 				B321E4E11972A3900008EC02 /* view_phone.html */,
+				B321E4E01972A3900008EC02 /* view_pad.html */,
 			);
 			path = Html;
 			sourceTree = "<group>";
@@ -452,6 +453,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B3E8012C1975C0C4009611BD /* Objective-C-HMTL-Parser */ = {
+			isa = PBXGroup;
+			children = (
+				B3E8012D1975C0C4009611BD /* HTMLNode.h */,
+				B3E8012E1975C0C4009611BD /* HTMLNode.m */,
+				B3E8012F1975C0C4009611BD /* HTMLParser.h */,
+				B3E801301975C0C4009611BD /* HTMLParser.m */,
+			);
+			path = "Objective-C-HMTL-Parser";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -530,8 +542,6 @@
 				B321E5061972A3900008EC02 /* share@2x.png in Resources */,
 				B321E5071972A3900008EC02 /* ReutersNews-Info.plist in Resources */,
 				B321E5081972A3900008EC02 /* ReutersNewsRSSFeeds.plist in Resources */,
-				B321E5191972A39F0008EC02 /* WebViewController_iPad.xib in Resources */,
-				B321E51A1972A39F0008EC02 /* WebViewController_iPhone.xib in Resources */,
 				B321E51D1972D9F10008EC02 /* InfoPlist.strings in Resources */,
 				B321E5271972DE940008EC02 /* Storyboard_phone.storyboard in Resources */,
 				B321E5291972DEB10008EC02 /* Storyboard_pad.storyboard in Resources */,
@@ -573,6 +583,8 @@
 				B321E5391972EC160008EC02 /* JSSlidingViewController.m in Sources */,
 				B321E53C1972F2B50008EC02 /* NewsViewController.m in Sources */,
 				B321E53F1972FABB0008EC02 /* NavigationController.m in Sources */,
+				B3E801321975C0C4009611BD /* HTMLNode.m in Sources */,
+				B3E801331975C0C4009611BD /* HTMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

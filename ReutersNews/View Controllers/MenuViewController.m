@@ -74,7 +74,11 @@
     NSString *feedURL = [newsSectionsValues objectAtIndex:indexPath.row];
     
     [[_slidingViewController backViewController] setTitle:feedTitle];
-    [((NewsViewController*)[_slidingViewController frontViewController]) setFeedURL:feedURL];
+    
+   
+    
+    
+    [((NewsViewController*) [((UINavigationController*)[_slidingViewController frontViewController]) viewControllers][0]) setRSSURL:feedURL];
     [self toggleSlider];
 }
 

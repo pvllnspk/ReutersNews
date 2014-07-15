@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MenuViewController.h"
-#import "NewsViewController.h"
+#import "NavigationController.h"
 
 @implementation AppDelegate
 {
@@ -40,8 +40,8 @@
         
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
         MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-        NewsViewController *newsViewController = [storyboard instantiateViewControllerWithIdentifier:@"News"];
-        slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:newsViewController backViewController:menuViewController];
+        NavigationController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
+        slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:navViewController backViewController:menuViewController];
         menuViewController.slidingViewController = slidingViewController;
         self.window.rootViewController = slidingViewController;
         

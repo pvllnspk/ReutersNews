@@ -182,6 +182,7 @@
 		NSURLResponse *response = nil;
 		NSError *error = nil;
 		NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
 		if (data && !error) {
 			[self startParsingData:data textEncodingName:[response textEncodingName]]; // Process
 		} else {
@@ -411,6 +412,9 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	
+//    NSString *feedData = [[NSString alloc]initWithData:asyncData encoding:NSUTF8StringEncoding];
+//    NSLog(@"feedData  %@",feedData);
+    
 	// Succeed
 	MWLog(@"MWFeedParser: Connection successful... received %d bytes of data", [asyncData length]);
 	

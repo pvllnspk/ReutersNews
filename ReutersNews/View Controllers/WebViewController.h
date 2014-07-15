@@ -13,7 +13,6 @@
 @interface WebViewController : UIViewController
 
 @property (nonatomic, retain) NSArray *feeds;
-
-- (void) setFeed:(MWFeedItem *)feed;
+@property (nonatomic, retain) MWFeedItem *feed;
 
 @end

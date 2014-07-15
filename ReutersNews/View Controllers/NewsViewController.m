@@ -38,7 +38,7 @@
 }
 
 
--(void) setFeedURL:(NSString *)feedURL{
+-(void) setRSSURL:(NSString *)feedURL{
     
     parsedData = [NSMutableArray array];
 	displayData = [NSArray array];
@@ -138,9 +138,19 @@
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"FeedSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        WebViewController *webViewController = segue.destinationViewController;
+        [webViewController setFeed:[displayData objectAtIndex:indexPath.row]];
+        [webViewController setFeeds:displayData];
+    }
+}
+
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
 //    
 //    [self.webViewController setFeeds: _itemsToDisplay];
 //    [self.webViewController setFeed:(MWFeedItem *)[_itemsToDisplay objectAtIndex:indexPath.row]];
@@ -149,7 +159,7 @@
 //    // Deselect
 //    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 //}
-//
+
 //-(void)tableViewLongPressWithCell:(FeedsTableViewCell *)cell
 //{
 //    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
@@ -173,16 +183,16 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Navigation logic may go here. Create and push another view controller.
+//    /*
+//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+//     // ...
+//     // Pass the selected object to the new view controller.
+//     [self.navigationController pushViewController:detailViewController animated:YES];
+//     */
+//}
 
 
 - (NSString*)getUserFriendlyDate:(NSDate *)date{

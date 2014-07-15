@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="neW-ih-ZEi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vx7-c0-FoA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -63,7 +63,7 @@
                                     <constraint firstItem="QWm-c5-fo8" firstAttribute="trailing" secondItem="JqW-ck-iRZ" secondAttribute="trailing" type="default" id="uPo-QS-eVM"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="yxE-O2-biZ" kind="push" identifier="NewsContent" id="VdS-O6-6fe"/>
+                                    <segue destination="yxE-O2-biZ" kind="push" identifier="FeedSegue" id="VdS-O6-6fe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,20 +78,37 @@
             </objects>
             <point key="canvasLocation" x="-433" y="-438"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="fhm-au-Yx5">
             <objects>
-                <viewController id="yxE-O2-biZ" sceneMemberID="viewController">
-                    <webView key="view" contentMode="scaleToFill" id="6X7-NM-6la">
+                <viewController id="yxE-O2-biZ" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4vG-l6-VC6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </webView>
+                        <subviews>
+                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOc-SU-f0K">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vOc-SU-f0K" firstAttribute="bottom" secondItem="4vG-l6-VC6" secondAttribute="bottom" type="default" id="JUw-w9-Bfd"/>
+                            <constraint firstItem="vOc-SU-f0K" firstAttribute="trailing" secondItem="4vG-l6-VC6" secondAttribute="trailing" type="default" id="htq-Fb-kMO"/>
+                            <constraint firstItem="vOc-SU-f0K" firstAttribute="leading" secondItem="4vG-l6-VC6" secondAttribute="leading" type="default" id="oPz-VO-JzQ"/>
+                            <constraint firstItem="vOc-SU-f0K" firstAttribute="top" secondItem="4vG-l6-VC6" secondAttribute="top" type="default" id="zGw-wh-pND"/>
+                        </constraints>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                        <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    </view>
                     <navigationItem key="navigationItem" id="O2W-HK-Qqw"/>
+                    <connections>
+                        <outlet property="webView" destination="vOc-SU-f0K" id="NZV-5d-Cnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHz-Si-IU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="-438"/>
+            <point key="canvasLocation" x="8" y="-438"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="CEA-cB-CSD">
@@ -177,6 +194,13 @@
         </class>
         <class className="NewsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tabButtonPressed:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
