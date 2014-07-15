@@ -54,6 +54,16 @@
 }
 
 
+- (void)toggleLockSlider {
+    
+    if ([slidingViewController locked]) {
+        [slidingViewController setLocked:FALSE];
+    } else {
+        [slidingViewController setLocked:TRUE];
+    }
+}
+
+
 -(void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
     
     [[NSURLCache sharedURLCache] removeAllCachedResponses];

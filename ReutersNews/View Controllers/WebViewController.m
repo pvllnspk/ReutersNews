@@ -12,6 +12,7 @@
 #import "HTMLParser.h"
 #import "NSString+Additions.h"
 #import "RNActivityViewController.h"
+#import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM (NSInteger, FeedTransition)
@@ -66,133 +67,67 @@ typedef NS_ENUM (NSInteger, FontSizeChangeType)
         if (data && !error){
             
             result = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-            HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
-            
-            if (error) {
-                NSLog(@"Error: %@", error);
-                return;
-            }
-            
-            HTMLNode *bodyNode = [parser body];
-            NSArray *spanNodes = [bodyNode findChildTags:@"span"];
-            for (HTMLNode *spanNode in spanNodes) {
-                if ([[spanNode getAttributeNamed:@"class"] isEqualToString:@"focusParagraph"]) {
-                    feedText = [spanNode rawContents];
-                    NSLog(@" feedText    %@", [spanNode rawContents]);
-                }
-            }
-            
-            
-//            TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-//            NSString *findImagesXpathQueryString = @"//div[@id='articleImage']";
-//            NSArray *textNodes = [doc searchWithXPathQuery:findImagesXpathQueryString];
-//            
-//            if([textNodes count]>0)
-//            {
-//                TFHppleElement *element = [textNodes objectAtIndex:0];
-//                TFHppleElement *childElement =[element firstChildWithTagName: @"img"];
-//                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<img src='%@' border='0'/>",[childElement objectForKey:@"src"]]];
-//                feedText = [feedText stringByAppendingString:[NSString stringWithFormat:@"<p class='alt'>%@</p>",[[childElement objectForKey:@"alt"] stringByStrippingHTML]]];
-//            }
-            
-            
-            
-            //TODO: didn't manage to parse it with the TFHpple => extract midArticle data manually
-            //TODO: TRY WITH REGULAR EXPRESSIONS
-            
-            for(int i=0;i<20;i++){
-                NSString *str = [result stringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
-                if(str)
-                {
-                    feedText = [feedText stringByAppendingString:str];
-                }
-            }
-            
-            for(int i=0;i<20;i++){
-                NSString *str = [result lastStringBetweenString:[NSString stringWithFormat:@"midArticle_%d",i] andString:[NSString stringWithFormat:@"midArticle_%d",i+1]];
-                if(str && [feedText rangeOfString:str].location == NSNotFound)
-                {
-                    feedText = [feedText stringByAppendingString:str];
-                }
-            }
-            
-            //fix
-            @try {
-                NSRange location = [feedText rangeOfString:@"\"></span>"];
-                feedText = [feedText stringByReplacingCharactersInRange:location withString:@""];
-            }
-            @catch (NSException *exception) {
-                NSLog(@"%@",exception);
-            }
-            @finally {
-            }
-            
+            //Didn't manage to do it properly neither with TFHpple nor HTMLParser
+            feedText = [result stringBetweenString:@"<span id=\"midArticle_start\"></span>" andString:@"<div class=\"relatedTopicButtons\">"];            
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [html replaceOccurrencesOfString:@"Loading..." withString:feedText options:0 range:NSMakeRange(0, html.length)];
             [_webView loadHTMLString:html baseURL:nil];
-            
         });
     });
     
+    
+    UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+    swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeleft];
+    
+    UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+    swiperight.direction=UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swiperight];
 }
-//
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [self.navigationController setNavigationBarHidden:YES];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [self.navigationController setNavigationBarHidden:NO];
-//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
-//}
 
 
-//- (void)webViewDidStartLoad:(UIWebView *)webView
-//{
-//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-//}
-//
-//- (void)webViewDidFinishLoad:(UIWebView *)webView
-//{
-//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-//}
+-(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer{
+    
+
+}
 
 
-//#pragma mark -
-//#pragma mark Fontsize Change
-//
-//- (IBAction)fontSizePinch:(id)sender
-//{
-//    UIPinchGestureRecognizer *pinch = sender;
-//    if (pinch.state == UIGestureRecognizerStateRecognized)
-//    {
-//        [self changeFontSize:(pinch.scale > 1)?FontSizeChangeTypeIncrease:FontSizeChangeTypeDecrease];
-//    }
-//}
-
-//- (void)changeFontSize:(FontSizeChangeType)changeType
-//{
-//    if (changeType == FontSizeChangeTypeIncrease && currentFontSize == 160) return;
-//    if (changeType == FontSizeChangeTypeDecrease && currentFontSize == 50) return;
-//    if (changeType != FontSizeChangeTypeNone)
-//    {
-//        currentFontSize = (changeType == FontSizeChangeTypeIncrease) ? currentFontSize + 5 : currentFontSize - 5;
-//        [[NSUserDefaults standardUserDefaults] setInteger:currentFontSize forKey:@"fontsize"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
-//    NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'",
-//                          currentFontSize];
-//    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
-//}
+-(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer{
+    
+     [self.navigationController popViewControllerAnimated:YES];
+}
 
 
-//#pragma mark -
-//#pragma mark User Interaction Callbacks
-//
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    [[AppDelegate appDelegate] toggleLockSlider];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [self.navigationController setNavigationBarHidden:NO];
+    [[AppDelegate appDelegate] toggleLockSlider];
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
+}
+
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+
 //- (IBAction)tabButtonPressed:(id)sender
 //{
 //    int buttonTag = [sender tag];

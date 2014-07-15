@@ -76,6 +76,18 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+
 - (void)refresh{
     
 	[parsedData removeAllObjects];
@@ -148,51 +160,6 @@
         [webViewController setFeeds:displayData];
     }
 }
-
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    [self.webViewController setFeeds: _itemsToDisplay];
-//    [self.webViewController setFeed:(MWFeedItem *)[_itemsToDisplay objectAtIndex:indexPath.row]];
-//    [self.navigationController pushViewController:self.webViewController animated:YES];
-//    
-//    // Deselect
-//    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-//}
-
-//-(void)tableViewLongPressWithCell:(FeedsTableViewCell *)cell
-//{
-//    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-//    if (indexPath)
-//    {
-//        NSURL *url = [NSURL URLWithString:((MWFeedItem *)[_itemsToDisplay objectAtIndex:indexPath.row]).link];
-//        UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
-//        if ([RNHelper isPad])
-//        {
-//            CGRect cellFrame = [self.tableView convertRect:[self.tableView rectForRowAtIndexPath:indexPath] toView:[self.tableView superview]];
-//            cellFrame.size.height = cell.frame.size.height/2;
-//            _popoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
-//            [_popoverController presentPopoverFromRect:cellFrame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionDown animated:YES];
-//        }
-//        else
-//        {
-//            [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
-//        }
-//    }
-//}
-
-#pragma mark - Table view delegate
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Navigation logic may go here. Create and push another view controller.
-//    /*
-//     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-//     // ...
-//     // Pass the selected object to the new view controller.
-//     [self.navigationController pushViewController:detailViewController animated:YES];
-//     */
-//}
 
 
 - (NSString*)getUserFriendlyDate:(NSDate *)date{
