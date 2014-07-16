@@ -34,5 +34,21 @@
 		<string>http://mobile.reuters.com/reuters/rss/POL.xml</string>
 		<string>http://mobile.reuters.com/reuters/rss/HLT.xml</string>
 	</array>
+	<key>icons</key>
+	<array>
+		<string>newspaper.png</string>
+		<string>wink.png</string>
+		<string>accessibility.png</string>
+		<string>headphones.png</string>
+		<string>briefcase.png</string>
+		<string>credit.png</string>
+		<string>wrench.png</string>
+		<string>quill.png</string>
+		<string>flag.png</string>
+		<string>wand.png</string>
+		<string>globe.png</string>
+		<string>library.png</string>
+		<string>aid.png</string>
+	</array>
 </dict>
 </plist>

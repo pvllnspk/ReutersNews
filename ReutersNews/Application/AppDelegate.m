@@ -47,6 +47,7 @@
         
     }
     
+     [slidingViewController setWidthOfVisiblePortionOfFrontViewControllerWhenSliderIsOpen:4.0f];
     [self.window makeKeyAndVisible];
     
     

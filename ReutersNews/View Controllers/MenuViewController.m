@@ -12,7 +12,7 @@
 
 @implementation MenuViewController
 {
-    NSArray* newsSectionsKeys, *newsSectionsValues;
+    NSArray* newsSectionsKeys, *newsSectionsValues, *newsSectionsIcons;
 }
 
 
@@ -33,6 +33,7 @@
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersMobileRSS" ofType:@"plist"];
     newsSectionsKeys = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"keys"];
     newsSectionsValues = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"values"];
+    newsSectionsIcons = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"icons"];
     
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
     [self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -59,10 +60,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    UIImage *newsSectionImage = (UIImage *)[cell viewWithTag:101];
+    UIImageView *newsSectionImage = (UIImageView *)[cell viewWithTag:101];
     
     UILabel *newsSection = (UILabel *)[cell viewWithTag:102];
     newsSection.text = [newsSectionsKeys objectAtIndex:indexPath.row];
+    [newsSectionImage setImage:[UIImage imageNamed:[newsSectionsIcons objectAtIndex:indexPath.row]]];
     
     return cell;
 }
@@ -74,11 +76,8 @@
     NSString *feedURL = [newsSectionsValues objectAtIndex:indexPath.row];
     
     [[_slidingViewController backViewController] setTitle:feedTitle];
-    
-   
-    
-    
     [((NewsViewController*) [((UINavigationController*)[_slidingViewController frontViewController]) viewControllers][0]) setRSSURL:feedURL];
+    
     [self toggleSlider];
 }
 
