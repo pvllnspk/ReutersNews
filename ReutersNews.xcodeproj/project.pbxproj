@@ -11,13 +11,11 @@
 		B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4891972A3590008EC02 /* EdgeInsetsLabel.m */; };
 		B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4921972A36A0008EC02 /* NSString+Additions.m */; };
 		B321E4C51972A36A0008EC02 /* RNActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4941972A36A0008EC02 /* RNActivityViewController.m */; };
-		B321E4C61972A36A0008EC02 /* RNHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4961972A36A0008EC02 /* RNHelper.m */; };
 		B321E4C71972A36A0008EC02 /* RNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4981972A36A0008EC02 /* RNNavigationController.m */; };
 		B321E4C81972A36A0008EC02 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E49C1972A36A0008EC02 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B321E4C91972A36A0008EC02 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E49F1972A36A0008EC02 /* TFHpple.m */; };
 		B321E4CA1972A36A0008EC02 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4A11972A36A0008EC02 /* TFHppleElement.m */; };
 		B321E4CB1972A36A0008EC02 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4A31972A36A0008EC02 /* XPathQuery.m */; };
-		B321E4CC1972A36A0008EC02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4A61972A36A0008EC02 /* MBProgressHUD.m */; };
 		B321E4CD1972A36A0008EC02 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4A91972A36A0008EC02 /* MWFeedInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B321E4CE1972A36A0008EC02 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4AB1972A36A0008EC02 /* MWFeedItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B321E4CF1972A36A0008EC02 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4AD1972A36A0008EC02 /* MWFeedParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -179,8 +177,6 @@
 		B321E4921972A36A0008EC02 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B321E4931972A36A0008EC02 /* RNActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityViewController.h; sourceTree = "<group>"; };
 		B321E4941972A36A0008EC02 /* RNActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityViewController.m; sourceTree = "<group>"; };
-		B321E4951972A36A0008EC02 /* RNHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHelper.h; sourceTree = "<group>"; };
-		B321E4961972A36A0008EC02 /* RNHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHelper.m; sourceTree = "<group>"; };
 		B321E4971972A36A0008EC02 /* RNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNavigationController.h; sourceTree = "<group>"; };
 		B321E4981972A36A0008EC02 /* RNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNavigationController.m; sourceTree = "<group>"; };
 		B321E49B1972A36A0008EC02 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -191,8 +187,6 @@
 		B321E4A11972A36A0008EC02 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		B321E4A21972A36A0008EC02 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		B321E4A31972A36A0008EC02 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		B321E4A51972A36A0008EC02 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		B321E4A61972A36A0008EC02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B321E4A81972A36A0008EC02 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
 		B321E4A91972A36A0008EC02 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
 		B321E4AA1972A36A0008EC02 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
@@ -429,8 +423,6 @@
 				B321E4921972A36A0008EC02 /* NSString+Additions.m */,
 				B321E4931972A36A0008EC02 /* RNActivityViewController.h */,
 				B321E4941972A36A0008EC02 /* RNActivityViewController.m */,
-				B321E4951972A36A0008EC02 /* RNHelper.h */,
-				B321E4961972A36A0008EC02 /* RNHelper.m */,
 				B321E4971972A36A0008EC02 /* RNNavigationController.h */,
 				B321E4981972A36A0008EC02 /* RNNavigationController.m */,
 			);
@@ -445,7 +437,6 @@
 				B321E5321972EC160008EC02 /* JSSlidingViewController */,
 				B321E49A1972A36A0008EC02 /* Google Toolbox for Mac */,
 				B321E49D1972A36A0008EC02 /* Hpple */,
-				B321E4A41972A36A0008EC02 /* MBProgressHUD */,
 				B321E4A71972A36A0008EC02 /* MWFeedParser */,
 				B321E4B31972A36A0008EC02 /* NSDate-Extensions */,
 				B321E4B61972A36A0008EC02 /* ReadabilityActivity */,
@@ -475,15 +466,6 @@
 				B321E4A31972A36A0008EC02 /* XPathQuery.m */,
 			);
 			path = Hpple;
-			sourceTree = "<group>";
-		};
-		B321E4A41972A36A0008EC02 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				B321E4A51972A36A0008EC02 /* MBProgressHUD.h */,
-				B321E4A61972A36A0008EC02 /* MBProgressHUD.m */,
-			);
-			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		B321E4A71972A36A0008EC02 /* MWFeedParser */ = {
@@ -955,13 +937,11 @@
 				B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */,
 				B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */,
 				B321E4C51972A36A0008EC02 /* RNActivityViewController.m in Sources */,
-				B321E4C61972A36A0008EC02 /* RNHelper.m in Sources */,
 				B321E4C71972A36A0008EC02 /* RNNavigationController.m in Sources */,
 				B321E4C81972A36A0008EC02 /* GTMNSString+HTML.m in Sources */,
 				B321E4C91972A36A0008EC02 /* TFHpple.m in Sources */,
 				B321E4CA1972A36A0008EC02 /* TFHppleElement.m in Sources */,
 				B321E4CB1972A36A0008EC02 /* XPathQuery.m in Sources */,
-				B321E4CC1972A36A0008EC02 /* MBProgressHUD.m in Sources */,
 				B321E4CD1972A36A0008EC02 /* MWFeedInfo.m in Sources */,
 				B321E4CE1972A36A0008EC02 /* MWFeedItem.m in Sources */,
 				B321E4CF1972A36A0008EC02 /* MWFeedParser.m in Sources */,

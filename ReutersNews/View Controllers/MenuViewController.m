@@ -35,8 +35,13 @@
     newsSectionsValues = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"values"];
     newsSectionsIcons = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"icons"];
     
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
     [self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+}
+
+
+-(void) viewWillAppear:(BOOL)animated{
+    
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 
@@ -66,6 +71,9 @@
     newsSection.text = [newsSectionsKeys objectAtIndex:indexPath.row];
     [newsSectionImage setImage:[UIImage imageNamed:[newsSectionsIcons objectAtIndex:indexPath.row]]];
     
+    cell.selectedBackgroundView = [UIView new];
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:0.914 green:0.914 blue:0.914 alpha:1];
+    
     return cell;
 }
 
@@ -79,18 +87,7 @@
     [newsViewController setTitle:feedTitle];
     [newsViewController setRSSURL:feedURL];
     
-    [self toggleSlider];
+    [[AppDelegate appDelegate] toggleSlider];
 }
-
-
-- (void)toggleSlider {
-    
-    if ([_slidingViewController isOpen]) {
-        [_slidingViewController closeSlider:YES completion:nil];
-    } else {
-        [_slidingViewController openSlider:YES completion:nil];
-    }
-}
-
 
 @end

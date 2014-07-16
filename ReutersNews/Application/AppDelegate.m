@@ -55,6 +55,16 @@
 }
 
 
+- (void)toggleSlider {
+    
+    if ([slidingViewController isOpen]) {
+        [slidingViewController closeSlider:YES completion:nil];
+    } else {
+        [slidingViewController openSlider:YES completion:nil];
+    }
+}
+
+
 - (void)toggleLockSlider {
     
     if ([slidingViewController locked]) {

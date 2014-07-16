@@ -15,6 +15,7 @@
 
 + (AppDelegate *)appDelegate;
 
+- (void)toggleSlider;
 - (void)toggleLockSlider;
 
 @end

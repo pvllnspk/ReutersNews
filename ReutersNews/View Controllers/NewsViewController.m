@@ -10,9 +10,9 @@
 #import "MWFeedParser.h"
 #import "NSString+HTML.h"
 #import "WebViewController.h"
-#import "MBProgressHUD.h"
 #import "NSDate-Utilities.h"
 #import "UIImage+Additions.h"
+#import "AppDelegate.h"
 
 
 #if 0
@@ -32,7 +32,6 @@
     MWFeedParser *feedParser;
     NSDateFormatter *dateFormatter;
     UIRefreshControl *refreshControl;
-    MBProgressHUD *HUD;
     
     NSMutableArray *parsedData;
     NSArray *displayData;
@@ -40,6 +39,9 @@
 
 
 -(void) setRSSURL:(NSString *)feedURL{
+    
+    self.tableView.userInteractionEnabled = NO;
+    [refreshControl beginRefreshing];
     
     parsedData = [NSMutableArray array];
 	displayData = [NSArray array];
@@ -50,11 +52,6 @@
     feedParser.feedParseType = ParseTypeFull;
     feedParser.connectionType = ConnectionTypeAsynchronously;
     [feedParser parse];
-    
-    self.tableView.userInteractionEnabled = NO;
-    
-    HUD.labelText = @"Loading...";
-    [HUD show:YES];
 }
 
 
@@ -71,10 +68,6 @@
 	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
-    HUD = [[MBProgressHUD alloc] initWithView:self.view];
-    HUD.mode = MBProgressHUDModeIndeterminate;
-    [self.view addSubview:HUD];
-    
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
     
     NSDictionary *_titleTextAttributes = @{UITextAttributeTextColor: [UIColor blackColor],
@@ -89,17 +82,24 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     
-//    [self.navigationController setNavigationBarHidden:YES];
+    //    [self.navigationController setNavigationBarHidden:YES];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated{
     
-//    [self.navigationController setNavigationBarHidden:NO];
+    //    [self.navigationController setNavigationBarHidden:NO];
+}
+
+
+- (IBAction)menuButtonPressed:(id)sender {
+    
+    [[AppDelegate appDelegate] toggleSlider];
 }
 
 
 - (void)refresh{
+    [refreshControl beginRefreshing];
     
 	[parsedData removeAllObjects];
     
@@ -107,8 +107,6 @@
 	[feedParser parse];
 	
     self.tableView.userInteractionEnabled = NO;
-    HUD.labelText = @"Refreshing...";
-    [HUD show:YES];
 }
 
 
@@ -117,11 +115,11 @@
 	displayData = [parsedData sortedArrayUsingDescriptors: [NSArray arrayWithObject:[[NSSortDescriptor alloc]
                                                                                      initWithKey:@"date" ascending:NO]]];
 	self.tableView.userInteractionEnabled = YES;
-    [HUD hide:YES];
-    [refreshControl endRefreshing];
     
 	[self.tableView reloadData];
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+    
+    [refreshControl endRefreshing];
 }
 
 
@@ -149,8 +147,8 @@
     if(feed){
         
         NSString *feedTitle = feed.title ? [feed.title stringByConvertingHTMLToPlainText] : @"[No Title]";
-//		NSString *feedSummary = feed.summary ? [feed.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
-
+        //		NSString *feedSummary = feed.summary ? [feed.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
+        
         UILabel *newsTitle = (UILabel *)[cell viewWithTag:101];
         newsTitle.text = feedTitle;
         

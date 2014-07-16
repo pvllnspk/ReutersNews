@@ -412,8 +412,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	
-    NSString *feedData = [[NSString alloc]initWithData:asyncData encoding:NSUTF8StringEncoding];
-    NSLog(@"feedData  %@",feedData);
+//    NSString *feedData = [[NSString alloc]initWithData:asyncData encoding:NSUTF8StringEncoding];
+//    NSLog(@"feedData  %@",feedData);
     
 	// Succeed
 	MWLog(@"MWFeedParser: Connection successful... received %d bytes of data", [asyncData length]);
