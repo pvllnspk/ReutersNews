@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--News View Controller-->
+        <!--News View Controller - Reuters News-->
         <scene sceneID="fhX-JW-bsd">
             <objects>
                 <tableViewController storyboardIdentifier="News" id="WRj-Oo-CSb" customClass="NewsViewController" sceneMemberID="viewController">
@@ -31,19 +31,10 @@
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Date" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gh-UF-6Qp">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Date" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gh-UF-6Qp">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="F4J-Hv-OCN"/>
                                                 <constraint firstAttribute="width" constant="85" id="zK5-V5-Gb3"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Comments" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWm-c5-fo8">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="85" id="NBA-ib-VPQ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,13 +45,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="1Gh-UF-6Qp" secondAttribute="bottom" constant="1" id="6Vy-yR-Vf9"/>
-                                    <constraint firstItem="QWm-c5-fo8" firstAttribute="top" secondItem="1Gh-UF-6Qp" secondAttribute="top" type="default" id="KJB-8w-Ana"/>
                                     <constraint firstItem="JqW-ck-iRZ" firstAttribute="centerX" secondItem="EZZ-NR-BrT" secondAttribute="centerX" type="default" id="T7k-xY-TZX"/>
-                                    <constraint firstItem="1Gh-UF-6Qp" firstAttribute="leading" secondItem="JqW-ck-iRZ" secondAttribute="leading" type="default" id="XG0-9v-2nE"/>
-                                    <constraint firstItem="QWm-c5-fo8" firstAttribute="bottom" secondItem="1Gh-UF-6Qp" secondAttribute="bottom" type="default" id="nZO-Ma-Rc1"/>
+                                    <constraint firstItem="1Gh-UF-6Qp" firstAttribute="trailing" secondItem="JqW-ck-iRZ" secondAttribute="trailing" type="default" id="bdS-7c-mdX"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Gh-UF-6Qp" secondAttribute="bottom" constant="7" id="hm5-Jx-7gz"/>
                                     <constraint firstItem="JqW-ck-iRZ" firstAttribute="top" secondItem="EZZ-NR-BrT" secondAttribute="top" type="default" id="u4F-Br-xLf"/>
-                                    <constraint firstItem="QWm-c5-fo8" firstAttribute="trailing" secondItem="JqW-ck-iRZ" secondAttribute="trailing" type="default" id="uPo-QS-eVM"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="yxE-O2-biZ" kind="push" identifier="FeedSegue" id="VdS-O6-6fe"/>
@@ -72,7 +60,22 @@
                             <outlet property="delegate" destination="WRj-Oo-CSb" id="4Gn-Wf-EY3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="T0D-W5-v6i"/>
+                    <navigationItem key="navigationItem" title="Reuters News" id="T0D-W5-v6i">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="5uR-q3-MyB">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l7K-cx-TuW">
+                                <rect key="frame" x="5" y="5" width="46" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="menu-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgb-2v-Q70" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,7 +135,7 @@
                                                 <constraint firstAttribute="width" constant="22" id="Kyd-MI-wjI"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-4c-1Hc">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUR-4c-1Hc">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="255" id="8pD-nm-ELX"/>
                                             </constraints>
@@ -182,6 +185,29 @@
             <point key="canvasLocation" x="-939" y="-438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu-icon.png" width="23" height="18"/>
+    </resources>
+    <classes>
+        <class className="MenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavigationController.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

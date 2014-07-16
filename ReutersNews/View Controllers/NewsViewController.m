@@ -12,6 +12,7 @@
 #import "WebViewController.h"
 #import "MBProgressHUD.h"
 #import "NSDate-Utilities.h"
+#import "UIImage+Additions.h"
 
 
 #if 0
@@ -73,18 +74,28 @@
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     HUD.mode = MBProgressHUDModeIndeterminate;
     [self.view addSubview:HUD];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    
+    NSDictionary *_titleTextAttributes = @{UITextAttributeTextColor: [UIColor blackColor],
+                                           UITextAttributeTextShadowColor : [UIColor clearColor],
+                                           UITextAttributeFont : [[UIFont fontWithName:@"HelveticaNeue-Light" size:15] fontWithSize:20.0f]};
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:_titleTextAttributes];
+    // remove shadow
+    [[UINavigationBar appearance]setShadowImage:[UIImage imageWithColor:[UIColor colorWithRed:0.80f green:0.80f blue:0.80f alpha:1.00f]]];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated{
     
-    [self.navigationController setNavigationBarHidden:YES];
+//    [self.navigationController setNavigationBarHidden:YES];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated{
     
-    [self.navigationController setNavigationBarHidden:NO];
+//    [self.navigationController setNavigationBarHidden:NO];
 }
 
 
