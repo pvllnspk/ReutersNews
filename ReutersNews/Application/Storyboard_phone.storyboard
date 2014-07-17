@@ -63,7 +63,7 @@
                     <navigationItem key="navigationItem" title="Reuters News" id="T0D-W5-v6i">
                         <barButtonItem key="leftBarButtonItem" style="done" id="5uR-q3-MyB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l7K-cx-TuW">
-                                <rect key="frame" x="5" y="5" width="46" height="33"/>
+                                <rect key="frame" x="5" y="5" width="45" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="menu-icon.png">
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="-433" y="-438"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Web View Controller - Reuters News-->
         <scene sceneID="fhm-au-Yx5">
             <objects>
                 <viewController id="yxE-O2-biZ" customClass="WebViewController" sceneMemberID="viewController">
@@ -110,7 +110,42 @@
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                         <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O2W-HK-Qqw"/>
+                    <navigationItem key="navigationItem" title="Reuters News" id="O2W-HK-Qqw">
+                        <barButtonItem key="leftBarButtonItem" width="15" style="plain" id="CmZ-9g-KXp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qzl-Eg-tyD">
+                                <rect key="frame" x="5" y="5" width="45" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="back-arrow.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBackButtonPressed:" destination="yxE-O2-biZ" eventType="touchUpInside" id="BIM-xf-55Z"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iSv-Vo-1pG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dBt-JH-AVf">
+                                <rect key="frame" x="270" y="5" width="45" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="share-icon.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onShareButtonPressed:" destination="yxE-O2-biZ" eventType="touchUpInside" id="bdh-fM-QJ6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="vOc-SU-f0K" id="NZV-5d-Cnp"/>
                     </connections>
@@ -192,8 +227,35 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back-arrow.png" width="19" height="16"/>
         <image name="menu-icon.png" width="23" height="18"/>
+        <image name="share-icon.png" width="23" height="18"/>
     </resources>
+    <classes>
+        <class className="MenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavigationController.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="menuButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onBackButtonPressed:"/>
+                <relationship kind="action" name="onShareButtonPressed:"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
