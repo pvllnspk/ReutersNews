@@ -12,7 +12,7 @@
 
 @implementation AppDelegate
 {
-     JSSlidingViewController *slidingViewController;
+    JSSlidingViewController *slidingViewController;
 }
 
 + (AppDelegate *)appDelegate {
@@ -29,15 +29,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard;
     
-    if (IS_IPAD()){
+//    if (IS_IPAD()){
+    
+//       storyboard = [UIStoryboard storyboardWithName:@"Storyboard_pad" bundle:nil];
         
-        //        CategoriesViewController *categoriesViewController = [[CategoriesViewController alloc] initWithNibName:@"CategoriesViewController_iPad" bundle:nil];
-        //        self.navigationController = [[RNNavigationController alloc] initWithRootViewController:categoriesViewController];
-        //        self.window.rootViewController = self.navigationController;
-        
-    } else{
-        
-        
+//    } else{
+    
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
         MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
         NavigationController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
@@ -45,9 +42,9 @@
         menuViewController.slidingViewController = slidingViewController;
         self.window.rootViewController = slidingViewController;
         
-    }
+//    }
     
-     [slidingViewController setWidthOfVisiblePortionOfFrontViewControllerWhenSliderIsOpen:4.0f];
+    [slidingViewController setWidthOfVisiblePortionOfFrontViewControllerWhenSliderIsOpen:4.0f];
     [self.window makeKeyAndVisible];
     
     

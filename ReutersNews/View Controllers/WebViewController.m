@@ -38,14 +38,18 @@ typedef NS_ENUM (NSInteger, FeedTransition)
     [[_webView scrollView] setContentInset:UIEdgeInsetsMake(0, 0, 5, 0)];
     
     filePath = [[NSBundle mainBundle] pathForResource:@"view_phone" ofType:@"html"];
-    
-    UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+
+    UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLeft:)];
     swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeleft];
     
-    UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+    UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRight:)];
     swiperight.direction=UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swiperight];
+    
+    UITapGestureRecognizer * doubletap = [[UITapGestureRecognizer alloc] initWithTarget: self action:@selector(doubleTap:)];
+    doubletap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:doubletap];
     
     [self refreshFeed:_feed];
 }
@@ -94,7 +98,7 @@ typedef NS_ENUM (NSInteger, FeedTransition)
 }
 
 
--(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer{
+- (void)swipeLeft:(UISwipeGestureRecognizer*)gestureRecognizer{
     
     if ([self indexOfFeed:_feed] == _feeds.count-1)
         return;
@@ -103,7 +107,7 @@ typedef NS_ENUM (NSInteger, FeedTransition)
 }
 
 
--(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer{
+- (void)swipeRight:(UISwipeGestureRecognizer*)gestureRecognizer{
     
     if ([self indexOfFeed:_feed] == 0){
         [self onBackButtonPressed:nil];
@@ -111,6 +115,13 @@ typedef NS_ENUM (NSInteger, FeedTransition)
     }
     
     [self transitionToType:FeedTransitionPrevious];
+}
+
+
+- (void) doubleTap:(UITapGestureRecognizer*)gestureRecognizer{
+    
+    //TODO: hide/show navigation bar
+    NSLog(@"doubleTap");
 }
 
 

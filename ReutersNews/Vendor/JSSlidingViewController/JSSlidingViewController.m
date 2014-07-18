@@ -46,7 +46,7 @@ NSString *  const JSSlidingViewControllerWillCloseNotification              = @"
 NSString *  const JSSlidingViewControllerDidOpenNotification                = @"JSSlidingViewControllerDidOpenNotification";
 NSString *  const JSSlidingViewControllerDidCloseNotification               = @"JSSlidingViewControllerDidCloseNotification";
 NSString *  const JSSlidingViewControllerWillBeginDraggingNotification      = @"JSSlidingViewControllerWillBeginDraggingNotification";
-CGFloat     const JSSlidingViewControllerDefaultVisibleFrontPortionWhenOpen = 140.0f; //58.0f;
+CGFloat     const JSSlidingViewControllerDefaultVisibleFrontPortionWhenOpen = 120.0f; //58.0f;
 CGFloat     const JSSlidingViewControllerDropShadowImageWidth               = 20.0f;
 
 @implementation SlidingScrollView

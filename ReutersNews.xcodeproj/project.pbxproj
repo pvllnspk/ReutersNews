@@ -11,7 +11,6 @@
 		B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4891972A3590008EC02 /* EdgeInsetsLabel.m */; };
 		B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4921972A36A0008EC02 /* NSString+Additions.m */; };
 		B321E4C51972A36A0008EC02 /* RNActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4941972A36A0008EC02 /* RNActivityViewController.m */; };
-		B321E4C71972A36A0008EC02 /* RNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4981972A36A0008EC02 /* RNNavigationController.m */; };
 		B321E4C81972A36A0008EC02 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E49C1972A36A0008EC02 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B321E4C91972A36A0008EC02 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E49F1972A36A0008EC02 /* TFHpple.m */; };
 		B321E4CA1972A36A0008EC02 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B321E4A11972A36A0008EC02 /* TFHppleElement.m */; };
@@ -179,8 +178,6 @@
 		B321E4921972A36A0008EC02 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		B321E4931972A36A0008EC02 /* RNActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityViewController.h; sourceTree = "<group>"; };
 		B321E4941972A36A0008EC02 /* RNActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityViewController.m; sourceTree = "<group>"; };
-		B321E4971972A36A0008EC02 /* RNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNavigationController.h; sourceTree = "<group>"; };
-		B321E4981972A36A0008EC02 /* RNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNavigationController.m; sourceTree = "<group>"; };
 		B321E49B1972A36A0008EC02 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		B321E49C1972A36A0008EC02 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		B321E49E1972A36A0008EC02 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
@@ -248,8 +245,8 @@
 		B321E5361972EC160008EC02 /* JSSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSlidingViewController.m; sourceTree = "<group>"; };
 		B321E53A1972F2B40008EC02 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		B321E53B1972F2B50008EC02 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		B321E53D1972FAB90008EC02 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
-		B321E53E1972FABA0008EC02 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		B321E53D1972FAB90008EC02 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationController.h; path = "../View Controllers/NavigationController.h"; sourceTree = "<group>"; };
+		B321E53E1972FABA0008EC02 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationController.m; path = "../View Controllers/NavigationController.m"; sourceTree = "<group>"; };
 		B321E5401972FBE10008EC02 /* AppSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
 		B3A0533F197724EF008F8AA7 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		B3A05340197724EF008F8AA7 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
@@ -385,6 +382,8 @@
 				B321E51F1972DDEE0008EC02 /* AppDelegate.h */,
 				B321E5201972DDEE0008EC02 /* AppDelegate.m */,
 				B321E5401972FBE10008EC02 /* AppSettings.h */,
+				B321E53D1972FAB90008EC02 /* NavigationController.h */,
+				B321E53E1972FABA0008EC02 /* NavigationController.m */,
 				B321E5261972DE940008EC02 /* Storyboard_phone.storyboard */,
 				B321E5281972DEB00008EC02 /* Storyboard_pad.storyboard */,
 			);
@@ -397,8 +396,6 @@
 			children = (
 				B321E52F1972E4490008EC02 /* MenuViewController.h */,
 				B321E5301972E4490008EC02 /* MenuViewController.m */,
-				B321E53D1972FAB90008EC02 /* NavigationController.h */,
-				B321E53E1972FABA0008EC02 /* NavigationController.m */,
 				B321E53A1972F2B40008EC02 /* NewsViewController.h */,
 				B321E53B1972F2B50008EC02 /* NewsViewController.m */,
 				B321E4851972A3590008EC02 /* WebViewController.h */,
@@ -427,8 +424,6 @@
 				B321E4921972A36A0008EC02 /* NSString+Additions.m */,
 				B321E4931972A36A0008EC02 /* RNActivityViewController.h */,
 				B321E4941972A36A0008EC02 /* RNActivityViewController.m */,
-				B321E4971972A36A0008EC02 /* RNNavigationController.h */,
-				B321E4981972A36A0008EC02 /* RNNavigationController.m */,
 			);
 			name = Helpers;
 			path = ReutersNews/Helpers;
@@ -547,9 +542,9 @@
 		B321E4E21972A3900008EC02 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B3EA914D19770A7D00FC3478 /* Menu */,
 				B3E5BB8C197845ED00A798BF /* expand.png */,
 				B3E5BB8D197845F500A798BF /* expand2.png */,
-				B3EA914D19770A7D00FC3478 /* Menu */,
 				B3EA917E197715B300FC3478 /* back-arrow-darktheme.png */,
 				B3EA917F197715B300FC3478 /* back-arrow-darktheme@2x.png */,
 				B3EA9180197715B400FC3478 /* back-arrow.png */,
@@ -690,7 +685,6 @@
 				B321E4991972A36A0008EC02 /* Vendor */,
 				B321E4871972A3590008EC02 /* Views */,
 				B321E4DE1972A3900008EC02 /* Resources */,
-				B321E52A1972E23B0008EC02 /* ReutersMobileRSS.plist */,
 				B3E0FA7417914DEE00BD4CC4 /* Supporting Files */,
 			);
 			name = ReutersNewsReader;
@@ -700,6 +694,7 @@
 		B3E0FA7417914DEE00BD4CC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B321E52A1972E23B0008EC02 /* ReutersMobileRSS.plist */,
 				B321E51C1972D9F10008EC02 /* InfoPlist.strings */,
 				B321E4DD1972A3900008EC02 /* main.m */,
 				B321E4F21972A3900008EC02 /* ReutersNews-Info.plist */,
@@ -945,7 +940,6 @@
 				B321E48F1972A3590008EC02 /* EdgeInsetsLabel.m in Sources */,
 				B321E4C41972A36A0008EC02 /* NSString+Additions.m in Sources */,
 				B321E4C51972A36A0008EC02 /* RNActivityViewController.m in Sources */,
-				B321E4C71972A36A0008EC02 /* RNNavigationController.m in Sources */,
 				B321E4C81972A36A0008EC02 /* GTMNSString+HTML.m in Sources */,
 				B321E4C91972A36A0008EC02 /* TFHpple.m in Sources */,
 				B321E4CA1972A36A0008EC02 /* TFHppleElement.m in Sources */,
