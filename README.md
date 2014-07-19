@@ -5,10 +5,10 @@
 <B>Dependencies</B>
 
 - [MWFeedParser](https://github.com/mwaterfall/MWFeedParser)
-- [hpple](https://github.com/topfunky/hpple)
+- [Objective-C-HMTL-Parser](https://github.com/zootreeves/Objective-C-HMTL-Parser)
+- [JSSlidingViewController](https://github.com/jaredsinclair/JSSlidingViewController)
 - [TUSafariActivity](https://github.com/davbeck/TUSafariActivity)
 - [ReadabilityActivity](https://github.com/arc90/ReadabilityActivity)
-- [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 - [NSDate-Extensions](https://github.com/erica/NSDate-Extensions)
 
 Copyleft (c) 2014 pvllnspk
