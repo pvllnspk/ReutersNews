@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RNActivityViewController : UIActivityViewController
+@interface ActivityViewController : UIActivityViewController
 
 + (UIActivityViewController*)controllerForURL:(NSURL*)URL;
 

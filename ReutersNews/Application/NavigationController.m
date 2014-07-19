@@ -10,10 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+Additions.h"
 
-@interface NavigationController ()
-
-@end
-
 @implementation NavigationController
 
 -(void) viewDidLoad{

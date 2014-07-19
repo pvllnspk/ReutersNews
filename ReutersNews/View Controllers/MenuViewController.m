@@ -22,23 +22,6 @@
 }
 
 
-- (id)initWithStyle:(UITableViewStyle)style{
-    
-    self = [super initWithStyle:style];
-    if (self) {
-        self.title = @"Select a section";
-    }
-    return self;
-}
-
-- (void)awakeFromNib{
-    
-    self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    [super awakeFromNib];
-}
-
-
 - (void)viewDidLoad{
     
     [super viewDidLoad];

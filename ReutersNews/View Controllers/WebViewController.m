@@ -8,10 +8,9 @@
 
 #import "WebViewController.h"
 #import "MWFeedItem.h"
-#import "TFHpple.h"
 #import "HTMLParser.h"
 #import "NSString+Additions.h"
-#import "RNActivityViewController.h"
+#import "ActivityViewController.h"
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -24,6 +23,8 @@ typedef NS_ENUM (NSInteger, FeedTransition)
 @interface WebViewController() <UIGestureRecognizerDelegate, UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) UIPopoverController *activityPopoverController;
 
 @end
 
@@ -134,8 +135,21 @@ typedef NS_ENUM (NSInteger, FeedTransition)
 - (IBAction)onShareButtonPressed:(id)sender {
     
     NSURL *url = [NSURL URLWithString:_feed.link];
-    UIActivityViewController *activityViewController = [RNActivityViewController controllerForURL:url];
-    [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+    UIActivityViewController *activityViewController = [ActivityViewController controllerForURL:url];
+    
+    if(IS_IPAD()){
+        
+        self.activityPopoverController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [self.activityPopoverController presentPopoverFromRect:CGRectMake(((UIButton*)sender).frame.origin.x,
+                                        ((UIButton*)sender).frame.origin.y, ((UIButton*)sender).frame.size.width, ((UIButton*)sender).frame.size.height)
+                                                        inView:self.view
+                                      permittedArrowDirections:UIPopoverArrowDirectionUp
+                                                      animated:YES];
+        
+    }else{
+        
+        [self.navigationController presentViewController:activityViewController animated:YES completion:nil];
+    }
 }
 
 

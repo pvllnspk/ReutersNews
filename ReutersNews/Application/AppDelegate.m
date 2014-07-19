@@ -16,6 +16,7 @@
     JSSlidingViewController *slidingViewController;
 }
 
+
 + (AppDelegate *)appDelegate {
     
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];

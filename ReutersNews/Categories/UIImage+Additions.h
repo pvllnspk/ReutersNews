@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Additions)
+
 + (UIImage *)imageWithColor:(UIColor *)color;
+
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size andRoundSize:(CGFloat)roundSize;
+
 @end

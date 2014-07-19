@@ -10,8 +10,8 @@
 
 @implementation EdgeInsetsLabel
 
-- (void)drawTextInRect:(CGRect)rect
-{
+- (void)drawTextInRect:(CGRect)rect{
+    
     UIEdgeInsets insets = {5, 10, 5, 10};
     return [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
 }

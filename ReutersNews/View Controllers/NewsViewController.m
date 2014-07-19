@@ -61,7 +61,6 @@
     }
     
     if(self.navigationController.topViewController != self){
-        
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -79,18 +78,6 @@
     dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-}
-
-
-- (void)viewWillAppear:(BOOL)animated{
-    
-    //    [self.navigationController setNavigationBarHidden:YES];
-}
-
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    //    [self.navigationController setNavigationBarHidden:NO];
 }
 
 
@@ -163,6 +150,7 @@
     return cell;
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier isEqualToString:@"FeedSegue"]) {
@@ -194,16 +182,16 @@
 
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController{
-//    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
 
+
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
 }
+
 
 #pragma mark -
 #pragma mark MWFeedParserDelegate

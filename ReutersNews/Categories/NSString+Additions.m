@@ -11,8 +11,8 @@
 
 @implementation NSString (Additions)
 
--(NSString*)sha1
-{
+-(NSString*)sha1{
+    
     const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:self.length];
     
@@ -25,13 +25,12 @@
     for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
         [output appendFormat:@"%02x", digest[i]];
     
-    
     return output;
-    
 }
 
-- (NSString *) md5
-{
+
+- (NSString *) md5{
+    
     const char *cStr = [self UTF8String];
     unsigned char result[16];
     CC_MD5( cStr, strlen(cStr), result ); // This is the md5 call
@@ -45,8 +44,8 @@
 }
 
 
--(NSString *)stringBetweenString:(NSString *)start andString:(NSString *)end
-{
+-(NSString *)stringBetweenString:(NSString *)start andString:(NSString *)end{
+    
     NSRange startRange = [self rangeOfString:start];
     if (startRange.location != NSNotFound) {
         NSRange targetRange;
@@ -61,8 +60,9 @@
     return nil;
 }
 
--(NSString *)lastStringBetweenString:(NSString *)start andString:(NSString *)end
-{
+
+-(NSString *)lastStringBetweenString:(NSString *)start andString:(NSString *)end{
+    
     NSRange startRange = [self rangeOfString:start options:NSBackwardsSearch];
     if (startRange.location != NSNotFound) {
         NSRange targetRange;
@@ -77,8 +77,9 @@
     return nil;
 }
 
-- (NSString *)stringByStrippingHTML
-{
+
+- (NSString *)stringByStrippingHTML{
+    
     NSRange r;
     NSString *s = [self copy];
     while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
