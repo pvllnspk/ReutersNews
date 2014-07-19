@@ -10,6 +10,12 @@
 #import "AppDelegate.h"
 #import "NewsViewController.h"
 
+@interface MenuViewController ()
+
+@property (strong, nonatomic) NewsViewController *newsViewController;
+
+@end
+
 @implementation MenuViewController
 {
     NSArray* newsSectionsKeys, *newsSectionsValues, *newsSectionsIcons;
@@ -25,10 +31,25 @@
     return self;
 }
 
+- (void)awakeFromNib{
+    
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    [super awakeFromNib];
+}
+
 
 - (void)viewDidLoad{
     
     [super viewDidLoad];
+    
+    if(IS_IPAD()){
+        
+        _newsViewController = (NewsViewController *)[self.splitViewController delegate];
+    }else{
+        
+        _newsViewController = [((UINavigationController*)[_slidingViewController frontViewController]) viewControllers][0];
+    }
     
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"ReutersMobileRSS" ofType:@"plist"];
     newsSectionsKeys = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"keys"];
@@ -82,10 +103,9 @@
     
     NSString *feedTitle = [newsSectionsKeys objectAtIndex:indexPath.row];
     NSString *feedURL = [newsSectionsValues objectAtIndex:indexPath.row];
-    
-    NewsViewController *newsViewController = [((UINavigationController*)[_slidingViewController frontViewController]) viewControllers][0];
-    [newsViewController setTitle:feedTitle];
-    [newsViewController setRSSURL:feedURL];
+
+    [_newsViewController setTitle:feedTitle];
+    [_newsViewController setRSSURL:feedURL];
     
     [[AppDelegate appDelegate] toggleSlider];
 }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JSSlidingViewController.h"
+#import "NewsViewController.h"
 
 @interface MenuViewController : UITableViewController
 

@@ -23,6 +23,8 @@
 
 @interface NewsViewController () <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, MWFeedParserDelegate>
 
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
 @end
 
 
@@ -51,6 +53,10 @@
     feedParser.feedParseType = ParseTypeFull;
     feedParser.connectionType = ConnectionTypeAsynchronously;
     [feedParser parse];
+    
+    if (self.masterPopoverController != nil) {
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
 }
 
 
@@ -177,6 +183,18 @@
     }
 }
 
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController{
+//    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem{
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
 
 #pragma mark -
 #pragma mark MWFeedParserDelegate

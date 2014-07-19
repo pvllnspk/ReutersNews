@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MenuViewController.h"
+#import "NewsViewController.h"
 #import "NavigationController.h"
 
 @implementation AppDelegate
@@ -29,24 +30,25 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *storyboard;
     
-//    if (IS_IPAD()){
-    
-//       storyboard = [UIStoryboard storyboardWithName:@"Storyboard_pad" bundle:nil];
+    if (IS_IPAD()){
         
-//    } else{
-    
+        storyboard = [UIStoryboard storyboardWithName:@"Storyboard_pad" bundle:nil];
+        UISplitViewController *splitViewController = [storyboard instantiateViewControllerWithIdentifier:@"Split"];
+        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        splitViewController.delegate = (id)navigationController.viewControllers[0];
+        self.window.rootViewController = splitViewController;
+        
+    } else{
+        
         storyboard = [UIStoryboard storyboardWithName:@"Storyboard_phone" bundle:nil];
         MenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
         NavigationController *navViewController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
         slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:navViewController backViewController:menuViewController];
         menuViewController.slidingViewController = slidingViewController;
         self.window.rootViewController = slidingViewController;
-        
-//    }
+    }
     
-    [slidingViewController setWidthOfVisiblePortionOfFrontViewControllerWhenSliderIsOpen:4.0f];
     [self.window makeKeyAndVisible];
-    
     
     return YES;
 }
