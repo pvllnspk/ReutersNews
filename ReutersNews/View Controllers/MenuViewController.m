@@ -57,11 +57,6 @@
     newsSectionsIcons = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] valueForKey:@"icons"];
     
     [self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-}
-
-
--(void) viewWillAppear:(BOOL)animated{
-    
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 

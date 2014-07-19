@@ -29,37 +29,23 @@
 }
 
 
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if(animated)
-    {
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if(animated){
+        
         CABasicAnimation *stretchAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale.x"];
-        [stretchAnimation setToValue:[NSNumber numberWithFloat:1.04]];
+        [stretchAnimation setToValue:[NSNumber numberWithFloat:1.1]];
         [stretchAnimation setRemovedOnCompletion:YES];
         [stretchAnimation setFillMode:kCAFillModeRemoved];
         [stretchAnimation setAutoreverses:YES];
-        [stretchAnimation setDuration:0.15];
-        [stretchAnimation setBeginTime:CACurrentMediaTime() + 0.3];
+        [stretchAnimation setDuration:0.3];
+        [stretchAnimation setBeginTime:CACurrentMediaTime() + 0.1];
         [stretchAnimation setDelegate:self];
         [stretchAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
         [self.view.layer addAnimation:stretchAnimation forKey:@"stretchAnimation"];
         
         CATransition *transition = [CATransition animation];
-        UIInterfaceOrientation interfaceOrientation = viewController.interfaceOrientation;
         NSString *subtypeTransition = kCATransitionFromRight;
-        switch (interfaceOrientation)
-        {
-            case UIInterfaceOrientationLandscapeLeft:
-                subtypeTransition = kCATransitionFromBottom;
-                break;
-            case UIInterfaceOrientationLandscapeRight:
-                subtypeTransition = kCATransitionFromTop;
-                break;
-            case UIInterfaceOrientationPortraitUpsideDown:
-                subtypeTransition = kCATransitionFromLeft;
-                break;
-            default: break;
-        }
         transition.duration = 0.4f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         transition.type = kCATransitionMoveIn;
@@ -73,27 +59,13 @@
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated{
     
-    if(animated)
-    {
+    if(animated){
+        
         CATransition *transition = [CATransition animation];
-        transition.duration = 0.3f;
+        transition.duration = 0.4f;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         transition.type = kCATransitionReveal;
-        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
         NSString *subtypeTransition = kCATransitionFromLeft;
-        switch (interfaceOrientation)
-        {
-            case UIInterfaceOrientationLandscapeLeft:
-                subtypeTransition = kCATransitionFromTop;
-                break;
-            case UIInterfaceOrientationLandscapeRight:
-                subtypeTransition = kCATransitionFromBottom;
-                break;
-            case UIInterfaceOrientationPortraitUpsideDown:
-                subtypeTransition = kCATransitionFromRight;
-                break;
-            default: break;
-        }
         transition.subtype = subtypeTransition;
         transition.removedOnCompletion = YES;
         transition.fillMode = kCAFillModeRemoved;

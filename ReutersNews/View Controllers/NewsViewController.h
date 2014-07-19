@@ -12,7 +12,6 @@
 
 @interface NewsViewController : UITableViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) WebViewController *webViewController;
 @property (strong, nonatomic, setter = setRSSURL:) NSString *rssURL;
 
 @end

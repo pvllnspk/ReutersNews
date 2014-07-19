@@ -25,6 +25,8 @@
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 
+@property (strong, nonatomic) WebViewController *webViewController;
+
 @end
 
 
@@ -56,6 +58,11 @@
     
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
+    
+    if(self.navigationController.topViewController != self){
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -161,9 +168,9 @@
     if ([segue.identifier isEqualToString:@"FeedSegue"]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        WebViewController *webViewController = segue.destinationViewController;
-        [webViewController setFeed:[displayData objectAtIndex:indexPath.row]];
-        [webViewController setFeeds:displayData];
+        _webViewController = segue.destinationViewController;
+        [_webViewController setFeed:[displayData objectAtIndex:indexPath.row]];
+        [_webViewController setFeeds:displayData];
     }
 }
 

@@ -21,10 +21,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="703" height="81"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="bottomLeft" text="News Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-Ej-MCO">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="bottomLeft" text="News Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-Ej-MCO">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="GnJ-MM-n1z"/>
-                                                <constraint firstAttribute="width" constant="601" id="rw5-4N-HiG"/>
+                                                <constraint firstAttribute="width" constant="578" id="qbb-kU-uWd"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -32,7 +31,7 @@
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="News Summary" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="663" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-lF-nt3">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="News Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="663" translatesAutoresizingMaskIntoConstraints="NO" id="xnR-lF-nt3">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="41" id="PvN-YC-Zel"/>
                                             </constraints>
@@ -43,10 +42,9 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Date" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDs-Ye-AZh">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="85" id="j7f-1R-C1I"/>
-                                                <constraint firstAttribute="height" constant="21" id="xQ9-9g-bkh"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -61,6 +59,7 @@
                                     <constraint firstItem="F0H-Ej-MCO" firstAttribute="top" secondItem="B5Q-cc-k1h" secondAttribute="top" constant="14" id="u72-wE-Kx5"/>
                                     <constraint firstItem="F0H-Ej-MCO" firstAttribute="leading" secondItem="B5Q-cc-k1h" secondAttribute="leading" constant="20" type="default" id="xXq-4i-vPR"/>
                                     <constraint firstItem="xnR-lF-nt3" firstAttribute="top" secondItem="B5Q-cc-k1h" secondAttribute="top" constant="34" id="xn9-SR-rCs"/>
+                                    <constraint firstItem="BDs-Ye-AZh" firstAttribute="baseline" secondItem="F0H-Ej-MCO" secondAttribute="baseline" type="default" id="ztp-oT-Qu1"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="ibe-G9-c9C" kind="push" identifier="FeedSegue" id="q4O-X0-k8y"/>
@@ -220,7 +219,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dRN-t2-mdG">
             <objects>
-                <navigationController storyboardIdentifier="Navigation" id="S55-FP-ZFN" customClass="NavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation" modalTransitionStyle="crossDissolve" id="S55-FP-ZFN" customClass="NavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R8F-cV-K02">
