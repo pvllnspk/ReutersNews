@@ -142,12 +142,14 @@
     if(feed){
         
         NSString *feedTitle = feed.title ? [feed.title stringByConvertingHTMLToPlainText] : @"[No Title]";
-        //		NSString *feedSummary = feed.summary ? [feed.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
+		NSString *feedSummary = feed.summary ? [feed.summary stringByConvertingHTMLToPlainText] : @"[No Summary]";
         
         UILabel *newsTitle = (UILabel *)[cell viewWithTag:101];
+        UILabel *newsSummary = (UILabel *)[cell viewWithTag:102];
         newsTitle.text = feedTitle;
+        newsSummary.text = feedSummary;
         
-        UILabel *date = (UILabel *)[cell viewWithTag:102];
+        UILabel *date = (UILabel *)[cell viewWithTag:103];
         date.text = [self getUserFriendlyDate:feed.date];
     }
     

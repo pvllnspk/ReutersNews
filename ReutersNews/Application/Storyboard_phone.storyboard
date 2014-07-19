@@ -22,8 +22,8 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="bottomLeft" text="News Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="296" translatesAutoresizingMaskIntoConstraints="NO" id="JqW-ck-iRZ">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="4yf-hz-cYi"/>
                                                 <constraint firstAttribute="width" constant="296" id="iED-u2-bUl"/>
-                                                <constraint firstAttribute="height" constant="47" id="lbx-us-lZ9"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -31,13 +31,13 @@
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Date" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gh-UF-6Qp">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Date" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gh-UF-6Qp">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="F4J-Hv-OCN"/>
                                                 <constraint firstAttribute="width" constant="85" id="zK5-V5-Gb3"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -47,8 +47,8 @@
                                 <constraints>
                                     <constraint firstItem="JqW-ck-iRZ" firstAttribute="centerX" secondItem="EZZ-NR-BrT" secondAttribute="centerX" type="default" id="T7k-xY-TZX"/>
                                     <constraint firstItem="1Gh-UF-6Qp" firstAttribute="trailing" secondItem="JqW-ck-iRZ" secondAttribute="trailing" type="default" id="bdS-7c-mdX"/>
-                                    <constraint firstAttribute="bottom" secondItem="1Gh-UF-6Qp" secondAttribute="bottom" constant="7" id="hm5-Jx-7gz"/>
-                                    <constraint firstItem="JqW-ck-iRZ" firstAttribute="top" secondItem="EZZ-NR-BrT" secondAttribute="top" type="default" id="u4F-Br-xLf"/>
+                                    <constraint firstItem="JqW-ck-iRZ" firstAttribute="top" secondItem="EZZ-NR-BrT" secondAttribute="top" constant="5" id="c3x-bl-dxh"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Gh-UF-6Qp" secondAttribute="bottom" constant="6" id="xzc-3n-7nV"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="yxE-O2-biZ" kind="push" identifier="FeedSegue" id="VdS-O6-6fe"/>
@@ -201,7 +201,6 @@
                         </connections>
                     </tableView>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obf-aS-j5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

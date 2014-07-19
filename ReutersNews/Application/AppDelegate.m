@@ -46,6 +46,7 @@
         slidingViewController = [[JSSlidingViewController alloc] initWithFrontViewController:navViewController backViewController:menuViewController];
         menuViewController.slidingViewController = slidingViewController;
         self.window.rootViewController = slidingViewController;
+        
     }
     
     [self.window makeKeyAndVisible];
