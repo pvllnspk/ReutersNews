@@ -4,7 +4,7 @@
 
 <B>Screenshots</B>
 
-![screenshot](https://github.com/pvllnspk/ReutersNews/raw/master/ReutersNews/Resources/Screenshots/Screen%20Shot%202014-07-19%20at%209.58.40%20PM.png)
+![screenshot](https://github.com/pvllnspk/ReutersNews/raw/master/ReutersNews/Resources/Screenshots/Screenshots.png)
 
 <B>Dependencies</B>
 

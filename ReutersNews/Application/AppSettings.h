@@ -9,11 +9,12 @@
 #ifndef ReutersNews_AppSettings_h
 #define ReutersNews_AppSettings_h
 
-#define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPAD()           (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-#define APP_VERSION         @"0.1.0"
+#define APP_VERSION         [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 #define CACHE_SIZE_MEMORY   10*1024*1024
+
 #define CACHE_SIZE_DISK     100*1024*1024
 
 #endif
